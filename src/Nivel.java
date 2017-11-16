@@ -10,11 +10,12 @@ import java.util.*;
 public class Nivel {
 
     //Variables
-    private String nombre;
-    private Set palabras;
+    private String nombre; //primer o segundo grado?
+    private Set<String> palabras;
 
     //Constructor
-    public Nivel() {
+    public Nivel(String nombre_, Set<String> palabras_) {
+        
 
     }
 
@@ -34,5 +35,6 @@ public class Nivel {
     public void setSet(Set value) {
         this.palabras = value;
     }
+    
 
 }

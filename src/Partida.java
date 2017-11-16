@@ -7,15 +7,22 @@ import java.util.*;
  * @version 0
  */
 public class Partida {
+    
+    private AppManager manager;
 
     private Nivel palabras;
-    private Set jugadores;
+    private Set<Jugador> jugadores;
+    private Set<String> correctas;
+    private Set<String> incorrectas;
+    
     private float tiempo;
-    private Set correctas;
-    private Set incorrectas;
 
     //constructor
-    public Partida() {
+    public Partida(String nivel_, String cat_) {
+        //aqui se carga la base de datos para inicializar los att de la clase
+        manager = AppManager.getInstance();
+        
+        
 
     }
 

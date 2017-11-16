@@ -12,8 +12,9 @@ public class Jugador {
     private int puntaje;
 
     //constructor
-    public Jugador() {
-
+    public Jugador(String nombre_) {
+        this.nombre = nombre_;
+        this.puntaje = 0;
     }
 
     //gets y sets
@@ -31,6 +32,10 @@ public class Jugador {
 
     public void setPuntaje(int value) {
         this.puntaje = value;
+    }
+    
+    public void addPoint(){
+        this.puntaje++;
     }
 
 }

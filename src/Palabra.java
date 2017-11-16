@@ -12,13 +12,15 @@ public class Palabra {
 
     //Variables
     private Image imagen;
+    private String urlImagen;
     private String etiqueta;
     private String nombre;
     private Set<Integer> set;
 
     //Constructor
-    public Palabra() {
-
+    public Palabra(String nombre_, String url_) {
+        this.nombre = nombre_;
+        this.urlImagen = url_;
     }
 
     //gets y sets
@@ -28,6 +30,14 @@ public class Palabra {
 
     public void setImagen(Image value) {
         this.imagen = value;
+    }
+
+    public String getURLImagen() {
+        return this.urlImagen;
+    }
+
+    public void setURLImagen(String value) {
+        this.urlImagen = value;
     }
 
     public String getEtiqueta() {
