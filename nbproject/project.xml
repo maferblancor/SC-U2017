@@ -3,11 +3,7 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-<<<<<<< HEAD
             <name>ConociendoPalabras</name>
-=======
-            <name>SC-U2017</name>
->>>>>>> 13a3801f41ef303ecd6f2f6f0e47b4c62ab444b2
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>

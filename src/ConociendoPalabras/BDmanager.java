@@ -16,17 +16,17 @@ import org.sqlite.*;
  *
  * @author Miguel Martinez
  */
-class BDmanager {
+public class BDmanager {
     Connection conn = null;
     
-    static Connection ConnectDB(){
+    public static Connection ConnectDB(){
         try{
-            //test
             Class.forName("org.sqlite.JDBC");
-            //JOptionPane.showMessageDialog(null, "Database connected");
-            return DriverManager.getConnection("jdbc:sqlite:db/testDB.db");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\julio\\ULA\\Servicio Comunitario\\ConociendoPalabras\\db\\testDB.db");
+           // JOptionPane.showMessageDialog(null, "Database connected");
+            return conn;
         }catch(Exception e){
-            //JOptionPane.showMessageDialog(null, "Database not connected\n" + e.getMessage());
+           // JOptionPane.showMessageDialog(null, "Database not connected");
             return null;
         }
     }
