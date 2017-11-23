@@ -162,14 +162,5 @@ public class AppManager {
         
         return false;
     }
-    
-    public static void main(String args[]){
-        
-        AppManager.setInstance();
-        
-        AppManager.instance.getPalabrasBD();
-        
-        
-    }
 
 }
