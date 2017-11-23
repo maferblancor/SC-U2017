@@ -25,7 +25,7 @@ public class BDmanager {
     public static Connection ConnectDB(){
         try{
             Class.forName("org.sqlite.JDBC");
-            String path = new File("src/resources/db/testDB.db").getAbsolutePath();
+            String path = new File("src/resources/db/conociendoPalabras.db").getAbsolutePath();
             Connection conn = DriverManager.getConnection("jdbc:sqlite:" + path);
            // JOptionPane.showMessageDialog(null, "Database connected");
             return conn;
