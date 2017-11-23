@@ -5,6 +5,7 @@
  */
 package ConociendoPalabras;
 import java.util.*;
+import java.awt.event.*;
 
 /**
  *
@@ -25,6 +26,19 @@ public class CP_GUI extends javax.swing.JFrame {
     int team3Score = 0;
     List<Palabra> wordList; 
     
+    Temporizador temporizador;
+    
+    ActionListener descontarSegundo = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            temporizador.tictoc();		  
+
+            if (temporizador.getiTime() == 0){
+                temporizador.stop();
+            }
+        }
+    };
+    
     /**
      * Creates new form CP_GUI
      */
@@ -35,6 +49,21 @@ public class CP_GUI extends javax.swing.JFrame {
         
         AppManager.setInstance();
         AppManager.instance.getPalabrasBD();
+        
+        //Temporizador
+        /*
+        Sus parametros de inicializacion son los siguiente:
+           1-. iTime: Desde que segundo va a empezar el temporizador (no puede ser negativo)
+           2-. delay: cuanto tardara el temporizador en descontar 1 segundo, esta en ms
+           3-. listener: es la accion que se ejecutara cada 'delay' ms
+        El listener va a descontar 1 segundo cada 'delay'ms y al llegar a 0 se detiene.
+        
+        Usar temporizador.start() para iniciar el temporizador.
+        Usar temporizador.stop() para detener el temporizador. (Este lo usa el listener 'descontarSegundo'
+        Usar temporizador.restart() para reiniciar el temporizador.
+        Usar temporizador.getiTime() para saber en que segundo va el temporizador.
+        */
+        temporizador = new Temporizador(30,1000, descontarSegundo);
         
         wordList = AppManager.instance.getPalabras();
         word = wordList.get(0).getNombre();
@@ -478,7 +507,7 @@ public class CP_GUI extends javax.swing.JFrame {
         butStartTime.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         labTimeCounter.setVisible(true);
         
-      // FALTA TEMPORIZADOR
+      //TEMPORIZADOR
       
         labTimeCounter.setText("1");
         
