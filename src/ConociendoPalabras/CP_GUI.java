@@ -20,7 +20,7 @@ public class CP_GUI extends javax.swing.JFrame {
     String text = "";       //TEXTO INGRESADO POR EL USUARIO
     int roundCount = 1;
     int roundTotal = 5;
-    int teams = 0;
+    int teams = 2;
     int team1Score = 0;
     int team2Score = 0;
     int team3Score = 0;
@@ -111,8 +111,6 @@ public class CP_GUI extends javax.swing.JFrame {
         EXIThome.setVisible(false);
         
         BACKplay.setVisible(false);
-        
-        labRoundCounter.setText(roundCount + "/" + roundTotal);
        
     }
          
@@ -483,6 +481,11 @@ public class CP_GUI extends javax.swing.JFrame {
         radRound5.setOpaque(false);
         radRound5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5.png"))); // NOI18N
         radRound5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5p.png"))); // NOI18N
+        radRound5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound5ActionPerformed(evt);
+            }
+        });
         TEAMS.add(radRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 92, 89));
 
         groupRounds.add(radRound10);
@@ -493,6 +496,11 @@ public class CP_GUI extends javax.swing.JFrame {
         radRound10.setOpaque(false);
         radRound10.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10.png"))); // NOI18N
         radRound10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10p.png"))); // NOI18N
+        radRound10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound10ActionPerformed(evt);
+            }
+        });
         TEAMS.add(radRound10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 92, 89));
 
         groupRounds.add(radRound15);
@@ -503,6 +511,11 @@ public class CP_GUI extends javax.swing.JFrame {
         radRound15.setOpaque(false);
         radRound15.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15.png"))); // NOI18N
         radRound15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15p.png"))); // NOI18N
+        radRound15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound15ActionPerformed(evt);
+            }
+        });
         TEAMS.add(radRound15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 92, 89));
 
         groupRounds.add(radRound20);
@@ -513,6 +526,11 @@ public class CP_GUI extends javax.swing.JFrame {
         radRound20.setOpaque(false);
         radRound20.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20.png"))); // NOI18N
         radRound20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20p.png"))); // NOI18N
+        radRound20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound20ActionPerformed(evt);
+            }
+        });
         TEAMS.add(radRound20, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 92, 89));
 
         butSummitTeams.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_OK.png"))); // NOI18N
@@ -1264,7 +1282,7 @@ public class CP_GUI extends javax.swing.JFrame {
         picture = "";    //NOMBRE IMAGEN A MOSTRAR
         roundCount = 1;
         roundTotal = 5; 
-        teams = 0;
+        teams = 2;
         team1Score = 0;
         team2Score = 0;
         team3Score = 0;
@@ -1581,6 +1599,8 @@ public class CP_GUI extends javax.swing.JFrame {
         textTeam1.setEnabled(true);
         textTeam2.setEnabled(true);
         textTeam3.setEnabled(true);
+        
+        teams = 3;
     }//GEN-LAST:event_radTeam3ActionPerformed
 
     private void radTeam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radTeam2ActionPerformed
@@ -1591,6 +1611,8 @@ public class CP_GUI extends javax.swing.JFrame {
         textTeam1.setEnabled(true);
         textTeam2.setEnabled(true);
         textTeam3.setEnabled(false);
+        
+        teams = 2;
     }//GEN-LAST:event_radTeam2ActionPerformed
 
     private void butSummitTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTeamsActionPerformed
@@ -1598,7 +1620,30 @@ public class CP_GUI extends javax.swing.JFrame {
         TEAMS.setVisible(false);
         //LVL.setVisible(true);
         PLAY.setVisible(true);
+        
+        //ESCRIBE NUMERO DE RONDAS 
+        labRoundCounter.setText(roundCount + "/" + roundTotal);
     }//GEN-LAST:event_butSummitTeamsActionPerformed
+
+    private void radRound5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound5ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 5;
+    }//GEN-LAST:event_radRound5ActionPerformed
+
+    private void radRound10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound10ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 10;
+    }//GEN-LAST:event_radRound10ActionPerformed
+
+    private void radRound15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound15ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 15;
+    }//GEN-LAST:event_radRound15ActionPerformed
+
+    private void radRound20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound20ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 20;
+    }//GEN-LAST:event_radRound20ActionPerformed
 
     /**
      * @param args the command line arguments
