@@ -71,12 +71,29 @@ public class CP_GUI extends javax.swing.JFrame {
         
         //INICIO COMPONENTES
         labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        
         PLAY.setVisible(false);
-        labTimeCounter.setVisible(false);
-        butBAD.setVisible(false);
-        butGOOD.setVisible(false);
-        butResetTime.setVisible(false);
-        butNext.setVisible(false);
+            labTimeCounter.setVisible(false);
+            butBAD.setVisible(false);
+            butGOOD.setVisible(false);
+            butResetTime.setVisible(false);
+            butNext.setVisible(false);
+            
+        LVL.setVisible(false);
+        
+        TEAMS.setVisible(false);
+        
+        INFO.setVisible(false);
+            BACKinfo.setVisible(false);
+        
+        TAGS.setVisible(false);
+       
+        FINAL.setVisible(false);
+        
+        EXITplay.setVisible(false);
+        EXIThome.setVisible(false);
+        
+        BACKplay.setVisible(false);
         
         labRoundCounter.setText(roundCount + "/" + roundTotal);
        
@@ -92,12 +109,27 @@ public class CP_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         HOME = new javax.swing.JPanel();
+        EXIThome = new javax.swing.JPanel();
+        butNoExitHome = new javax.swing.JButton();
+        butYesExitHome = new javax.swing.JButton();
+        bgroundExit1 = new javax.swing.JLabel();
+        butNONE1 = new javax.swing.JButton();
         butSalir = new javax.swing.JButton();
         butConfig = new javax.swing.JButton();
         butInfo = new javax.swing.JButton();
         butPlay = new javax.swing.JButton();
         bground = new javax.swing.JLabel();
         PLAY = new javax.swing.JPanel();
+        BACKplay = new javax.swing.JPanel();
+        butNoBack = new javax.swing.JButton();
+        butYesBack = new javax.swing.JButton();
+        bgroundExit2 = new javax.swing.JLabel();
+        butNONE2 = new javax.swing.JButton();
+        EXITplay = new javax.swing.JPanel();
+        butNoExit = new javax.swing.JButton();
+        butYesExit = new javax.swing.JButton();
+        bgroundExit = new javax.swing.JLabel();
+        butNONE = new javax.swing.JButton();
         butGOOD = new javax.swing.JButton();
         butBAD = new javax.swing.JButton();
         textPicture = new javax.swing.JTextField();
@@ -115,6 +147,22 @@ public class CP_GUI extends javax.swing.JFrame {
         labPicture = new javax.swing.JLabel();
         labBGPicture = new javax.swing.JLabel();
         bground4 = new javax.swing.JLabel();
+        LVL = new javax.swing.JPanel();
+        bground1 = new javax.swing.JLabel();
+        TAGS = new javax.swing.JPanel();
+        bground2 = new javax.swing.JLabel();
+        TEAMS = new javax.swing.JPanel();
+        bground3 = new javax.swing.JLabel();
+        FINAL = new javax.swing.JPanel();
+        bground5 = new javax.swing.JLabel();
+        INFO = new javax.swing.JPanel();
+        BACKinfo = new javax.swing.JPanel();
+        butNoBackInfo = new javax.swing.JButton();
+        butYesBackInfo = new javax.swing.JButton();
+        bgroundExit3 = new javax.swing.JLabel();
+        butNONE3 = new javax.swing.JButton();
+        butBackCInfo = new javax.swing.JButton();
+        bground6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONOCIENDO PALABRAS ");
@@ -126,13 +174,64 @@ public class CP_GUI extends javax.swing.JFrame {
 
         HOME.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        EXIThome.setBackground(new java.awt.Color(250, 250, 250, 0));
+        EXIThome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoExitHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoExitHome.setBorder(null);
+        butNoExitHome.setBorderPainted(false);
+        butNoExitHome.setContentAreaFilled(false);
+        butNoExitHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoExitHome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoExitHome.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoExitHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoExitHomeActionPerformed(evt);
+            }
+        });
+        EXIThome.add(butNoExitHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+
+        butYesExitHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesExitHome.setBorder(null);
+        butYesExitHome.setBorderPainted(false);
+        butYesExitHome.setContentAreaFilled(false);
+        butYesExitHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesExitHome.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesExitHome.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesExitHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesExitHomeActionPerformed(evt);
+            }
+        });
+        EXIThome.add(butYesExitHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        bgroundExit1.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTASALIR.png"))); // NOI18N
+        bgroundExit1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        EXIThome.add(bgroundExit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE1.setBorder(null);
+        butNONE1.setBorderPainted(false);
+        butNONE1.setContentAreaFilled(false);
+        butNONE1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE1.setEnabled(false);
+        butNONE1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE1ActionPerformed(evt);
+            }
+        });
+        EXIThome.add(butNONE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        HOME.add(EXIThome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         butSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_SALIR.png"))); // NOI18N
         butSalir.setBorder(null);
         butSalir.setBorderPainted(false);
         butSalir.setContentAreaFilled(false);
         butSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butSalir.setRolloverEnabled(true);
         butSalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_SALIR2p.png"))); // NOI18N
         butSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +246,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butConfig.setContentAreaFilled(false);
         butConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butConfig.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butConfig.setRolloverEnabled(true);
         butConfig.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_CONFIGp.png"))); // NOI18N
         butConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +260,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butInfo.setContentAreaFilled(false);
         butInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butInfo.setRolloverEnabled(true);
         butInfo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_ABOUTp.png"))); // NOI18N
         butInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +274,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butPlay.setContentAreaFilled(false);
         butPlay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butPlay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butPlay.setRolloverEnabled(true);
         butPlay.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_PLAYp.png"))); // NOI18N
         butPlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +288,111 @@ public class CP_GUI extends javax.swing.JFrame {
         HOME.add(bground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
 
         PLAY.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKplay.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKplay.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBack.setBorder(null);
+        butNoBack.setBorderPainted(false);
+        butNoBack.setContentAreaFilled(false);
+        butNoBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBack.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBack.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackActionPerformed(evt);
+            }
+        });
+        BACKplay.add(butNoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+
+        butYesBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBack.setBorder(null);
+        butYesBack.setBorderPainted(false);
+        butYesBack.setContentAreaFilled(false);
+        butYesBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBack.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBack.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackActionPerformed(evt);
+            }
+        });
+        BACKplay.add(butYesBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        bgroundExit2.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKplay.add(bgroundExit2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE2.setBorder(null);
+        butNONE2.setBorderPainted(false);
+        butNONE2.setContentAreaFilled(false);
+        butNONE2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE2.setEnabled(false);
+        butNONE2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE2ActionPerformed(evt);
+            }
+        });
+        BACKplay.add(butNONE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        PLAY.add(BACKplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        EXITplay.setBackground(new java.awt.Color(250, 250, 250, 0));
+        EXITplay.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoExit.setBorder(null);
+        butNoExit.setBorderPainted(false);
+        butNoExit.setContentAreaFilled(false);
+        butNoExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoExit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoExitActionPerformed(evt);
+            }
+        });
+        EXITplay.add(butNoExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+
+        butYesExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesExit.setBorder(null);
+        butYesExit.setBorderPainted(false);
+        butYesExit.setContentAreaFilled(false);
+        butYesExit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesExit.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesExitActionPerformed(evt);
+            }
+        });
+        EXITplay.add(butYesExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        bgroundExit.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTASALIR.png"))); // NOI18N
+        bgroundExit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        EXITplay.add(bgroundExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE.setBorder(null);
+        butNONE.setBorderPainted(false);
+        butNONE.setContentAreaFilled(false);
+        butNONE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE.setEnabled(false);
+        butNONE.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE.setRolloverEnabled(false);
+        butNONE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONEActionPerformed(evt);
+            }
+        });
+        EXITplay.add(butNONE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        PLAY.add(EXITplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         butGOOD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/GOOD.png"))); // NOI18N
         butGOOD.setBorder(null);
@@ -245,7 +446,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butBackC.setContentAreaFilled(false);
         butBackC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butBackC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butBackC.setRolloverEnabled(true);
         butBackC.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
         butBackC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,7 +460,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butExitC.setContentAreaFilled(false);
         butExitC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butExitC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butExitC.setRolloverEnabled(true);
         butExitC.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SALIRp.png"))); // NOI18N
         butExitC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,7 +474,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butEnter.setContentAreaFilled(false);
         butEnter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butEnter.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butEnter.setRolloverEnabled(true);
         butEnter.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_ENTERp.png"))); // NOI18N
         butEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,7 +488,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butResetTime.setContentAreaFilled(false);
         butResetTime.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butResetTime.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butResetTime.setRolloverEnabled(true);
         butResetTime.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RESET.png"))); // NOI18N
         butResetTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,7 +502,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butStartTime.setContentAreaFilled(false);
         butStartTime.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butStartTime.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butStartTime.setRolloverEnabled(true);
         butStartTime.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ-AC.png"))); // NOI18N
         butStartTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,7 +516,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butNext.setContentAreaFilled(false);
         butNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butNext.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butNext.setRolloverEnabled(true);
         butNext.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_SIGUIENTEp.png"))); // NOI18N
         butNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -335,7 +530,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butShowAnsw.setContentAreaFilled(false);
         butShowAnsw.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butShowAnsw.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butShowAnsw.setRolloverEnabled(true);
         butShowAnsw.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_CANDADOp.png"))); // NOI18N
         butShowAnsw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -368,6 +562,107 @@ public class CP_GUI extends javax.swing.JFrame {
         bground4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PLAY.add(bground4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
 
+        LVL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bground1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/LVL/2_TITULO.png"))); // NOI18N
+        bground1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        LVL.add(bground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        TAGS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bground2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_FONDO.png"))); // NOI18N
+        bground2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TAGS.add(bground2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        TEAMS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bground3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_SELECCIONA-TUS.png"))); // NOI18N
+        bground3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TEAMS.add(bground3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        FINAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bground5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/FINAL/5_FONDO.png"))); // NOI18N
+        bground5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        FINAL.add(bground5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        INFO.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKinfo.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKinfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackInfo.setBorder(null);
+        butNoBackInfo.setBorderPainted(false);
+        butNoBackInfo.setContentAreaFilled(false);
+        butNoBackInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackInfo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackInfoActionPerformed(evt);
+            }
+        });
+        BACKinfo.add(butNoBackInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+
+        butYesBackInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackInfo.setBorder(null);
+        butYesBackInfo.setBorderPainted(false);
+        butYesBackInfo.setContentAreaFilled(false);
+        butYesBackInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackInfo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackInfoActionPerformed(evt);
+            }
+        });
+        BACKinfo.add(butYesBackInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+
+        bgroundExit3.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKinfo.add(bgroundExit3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE3.setBorder(null);
+        butNONE3.setBorderPainted(false);
+        butNONE3.setContentAreaFilled(false);
+        butNONE3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE3.setEnabled(false);
+        butNONE3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE3ActionPerformed(evt);
+            }
+        });
+        BACKinfo.add(butNONE3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        INFO.add(BACKinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        butBackCInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCInfo.setBorder(null);
+        butBackCInfo.setBorderPainted(false);
+        butBackCInfo.setContentAreaFilled(false);
+        butBackCInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCInfo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCInfo.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCInfoActionPerformed(evt);
+            }
+        });
+        INFO.add(butBackCInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
+
+        bground6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/INFO.png"))); // NOI18N
+        bground6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        INFO.add(bground6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -378,6 +673,31 @@ public class CP_GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(PLAY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(LVL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TAGS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TEAMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(FINAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(INFO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,6 +706,31 @@ public class CP_GUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(PLAY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(LVL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TAGS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TEAMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(FINAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(INFO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -398,6 +743,8 @@ public class CP_GUI extends javax.swing.JFrame {
     
     private void butInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butInfoActionPerformed
         // TODO add your handling code here:
+        INFO.setVisible(true);
+        HOME.setVisible(false);
     }//GEN-LAST:event_butInfoActionPerformed
 
     private void butPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPlayActionPerformed
@@ -411,17 +758,13 @@ public class CP_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_butConfigActionPerformed
 
     private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed
-        // TODO add your handling code here:
-        
-        //VERIFICA
-            //FALTA
-            
-        //SALE
-        System.exit(0);
+        EXIThome.setVisible(true);
     }//GEN-LAST:event_butSalirActionPerformed
 
     private void resetGame(){
     //REINICIA BOTONES
+    
+        BACKplay.setVisible(false);
         
         labTimeCounter.setVisible(false);
         butBAD.setVisible(false);
@@ -468,28 +811,13 @@ public class CP_GUI extends javax.swing.JFrame {
     }
     
     private void butBackCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCActionPerformed
-        // TODO add your handling code here:
-        
-        //VERIFICA
-            //FALTA
-            
-        //CAMBIA VENTANA
-        PLAY.setVisible(false);
-        HOME.setVisible(true);
-        
-        //REINICIA JUEGO
-        resetGame();
-        
+        BACKplay.setVisible(true);
     }//GEN-LAST:event_butBackCActionPerformed
 
     private void butExitCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butExitCActionPerformed
         // TODO add your handling code here:
         
-        //VERIFICA
-            //FALTA
-            
-        //SALE
-        System.exit(0);
+        EXITplay.setVisible(true);
     }//GEN-LAST:event_butExitCActionPerformed
 
     private void butShowAnswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butShowAnswActionPerformed
@@ -554,7 +882,7 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butGOODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butGOODActionPerformed
         // TODO add your handling code here:
         butGOOD.setVisible(false);
-        
+
         roundCount++;
         if (roundCount > roundTotal){
            //LLAMA VENTANA FINAL
@@ -563,6 +891,8 @@ public class CP_GUI extends javax.swing.JFrame {
            resetGame();
         }
         else{
+            
+       
             labRoundCounter.setText(roundCount + "/" + roundTotal);
             textPicture.setText("");
             
@@ -592,7 +922,7 @@ public class CP_GUI extends javax.swing.JFrame {
          roundCount++;
         if (roundCount > roundTotal){
            //LLAMA VENTANA FINAL
-                       PLAY.setVisible(false);
+            PLAY.setVisible(false);
             HOME.setVisible(true);
            resetGame();
         }
@@ -608,6 +938,71 @@ public class CP_GUI extends javax.swing.JFrame {
             labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
         } 
     }//GEN-LAST:event_butNextActionPerformed
+
+    private void butYesExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_butYesExitActionPerformed
+
+    private void butNoExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoExitActionPerformed
+        // TODO add your handling code here:
+        EXITplay.setVisible(false);
+    }//GEN-LAST:event_butNoExitActionPerformed
+
+    private void butNONEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONEActionPerformed
+
+    private void butNoExitHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoExitHomeActionPerformed
+       EXIThome.setVisible(false);
+    }//GEN-LAST:event_butNoExitHomeActionPerformed
+
+    private void butYesExitHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesExitHomeActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_butYesExitHomeActionPerformed
+
+    private void butNONE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE1ActionPerformed
+
+    private void butNoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackActionPerformed
+        // TODO add your handling code here:
+        BACKplay.setVisible(false);
+    }//GEN-LAST:event_butNoBackActionPerformed
+
+    private void butYesBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackActionPerformed
+
+        PLAY.setVisible(false);
+        HOME.setVisible(true);
+        
+        resetGame();
+    }//GEN-LAST:event_butYesBackActionPerformed
+
+    private void butNONE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE2ActionPerformed
+
+    private void butNoBackInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackInfoActionPerformed
+        // TODO add your handling code here:
+        BACKinfo.setVisible(false);        
+    }//GEN-LAST:event_butNoBackInfoActionPerformed
+
+    private void butYesBackInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackInfoActionPerformed
+        // TODO add your handling code here:
+        
+        INFO.setVisible(false);
+        HOME.setVisible(true);
+    }//GEN-LAST:event_butYesBackInfoActionPerformed
+
+    private void butNONE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE3ActionPerformed
+
+    private void butBackCInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCInfoActionPerformed
+        // TODO add your handling code here:
+        BACKinfo.setVisible(true);       
+    }//GEN-LAST:event_butBackCInfoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -638,6 +1033,7 @@ public class CP_GUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new CP_GUI().setVisible(true);
             }
@@ -645,23 +1041,54 @@ public class CP_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BACKinfo;
+    private javax.swing.JPanel BACKplay;
+    private javax.swing.JPanel EXIThome;
+    private javax.swing.JPanel EXITplay;
+    private javax.swing.JPanel FINAL;
     private javax.swing.JPanel HOME;
+    private javax.swing.JPanel INFO;
+    private javax.swing.JPanel LVL;
     private javax.swing.JPanel PLAY;
+    private javax.swing.JPanel TAGS;
+    private javax.swing.JPanel TEAMS;
     private javax.swing.JLabel bground;
+    private javax.swing.JLabel bground1;
+    private javax.swing.JLabel bground2;
+    private javax.swing.JLabel bground3;
     private javax.swing.JLabel bground4;
+    private javax.swing.JLabel bground5;
+    private javax.swing.JLabel bground6;
+    private javax.swing.JLabel bgroundExit;
+    private javax.swing.JLabel bgroundExit1;
+    private javax.swing.JLabel bgroundExit2;
+    private javax.swing.JLabel bgroundExit3;
     private javax.swing.JButton butBAD;
     private javax.swing.JButton butBackC;
+    private javax.swing.JButton butBackCInfo;
     private javax.swing.JButton butConfig;
     private javax.swing.JButton butEnter;
     private javax.swing.JButton butExitC;
     private javax.swing.JButton butGOOD;
     private javax.swing.JButton butInfo;
+    private javax.swing.JButton butNONE;
+    private javax.swing.JButton butNONE1;
+    private javax.swing.JButton butNONE2;
+    private javax.swing.JButton butNONE3;
     private javax.swing.JButton butNext;
+    private javax.swing.JButton butNoBack;
+    private javax.swing.JButton butNoBackInfo;
+    private javax.swing.JButton butNoExit;
+    private javax.swing.JButton butNoExitHome;
     private javax.swing.JButton butPlay;
     private javax.swing.JButton butResetTime;
     private javax.swing.JButton butSalir;
     private javax.swing.JButton butShowAnsw;
     private javax.swing.JButton butStartTime;
+    private javax.swing.JButton butYesBack;
+    private javax.swing.JButton butYesBackInfo;
+    private javax.swing.JButton butYesExit;
+    private javax.swing.JButton butYesExitHome;
     private javax.swing.JLabel labBGPicture;
     private javax.swing.JLabel labFramePicture;
     private javax.swing.JLabel labPicture;
