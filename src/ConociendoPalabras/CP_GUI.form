@@ -704,7 +704,7 @@
         <Component class="javax.swing.JLabel" name="labTimeCounter">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Maiandra GD" size="160" style="1"/>
+              <Font name="Maiandra GD" size="100" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="1" green="98" red="fa" type="rgb"/>

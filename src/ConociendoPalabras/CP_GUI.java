@@ -397,7 +397,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butNONE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butNONE.setEnabled(false);
         butNONE.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butNONE.setRolloverEnabled(false);
         butNONE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 butNONEActionPerformed(evt);
@@ -447,7 +446,7 @@ public class CP_GUI extends javax.swing.JFrame {
         labRoundCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PLAY.add(labRoundCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 412, 70, 40));
 
-        labTimeCounter.setFont(new java.awt.Font("Maiandra GD", 1, 160)); // NOI18N
+        labTimeCounter.setFont(new java.awt.Font("Maiandra GD", 1, 100)); // NOI18N
         labTimeCounter.setForeground(new java.awt.Color(250, 152, 1));
         labTimeCounter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labTimeCounter.setText("1");
@@ -854,7 +853,7 @@ public class CP_GUI extends javax.swing.JFrame {
         butEnter.setEnabled(true);
         labText.setEnabled(true);
         
-        temporizador.startAt(6);
+        temporizador.startAt(29);
         labTimeCounter.setText(String.valueOf(temporizador.getiTime() + 1));
         
         
