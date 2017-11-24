@@ -1595,7 +1595,8 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butSummitTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTeamsActionPerformed
         // TODO add your handling code here:
         TEAMS.setVisible(false);
-        LVL.setVisible(true);
+        //LVL.setVisible(true);
+        PLAY.setVisible(true);
     }//GEN-LAST:event_butSummitTeamsActionPerformed
 
     /**
