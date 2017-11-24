@@ -93,15 +93,19 @@ public class CP_GUI extends javax.swing.JFrame {
             butNext.setVisible(false);
             
         LVL.setVisible(false);
+             BACKlvl.setVisible(false);
         
         TEAMS.setVisible(false);
+            BACKteams.setVisible(false);
         
         INFO.setVisible(false);
             BACKinfo.setVisible(false);
         
         TAGS.setVisible(false);
+            BACKtags.setVisible(false);
        
         FINAL.setVisible(false);
+            BACKfinal.setVisible(false);
         
         EXITplay.setVisible(false);
         EXIThome.setVisible(false);
@@ -121,6 +125,8 @@ public class CP_GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        groupTeams = new javax.swing.ButtonGroup();
+        groupRounds = new javax.swing.ButtonGroup();
         HOME = new javax.swing.JPanel();
         EXIThome = new javax.swing.JPanel();
         butNoExitHome = new javax.swing.JButton();
@@ -132,6 +138,43 @@ public class CP_GUI extends javax.swing.JFrame {
         butInfo = new javax.swing.JButton();
         butPlay = new javax.swing.JButton();
         bground = new javax.swing.JLabel();
+        TEAMS = new javax.swing.JPanel();
+        BACKteams = new javax.swing.JPanel();
+        butNoBackTeams = new javax.swing.JButton();
+        butYesBackTeams = new javax.swing.JButton();
+        bgroundExit4 = new javax.swing.JLabel();
+        butNONE4 = new javax.swing.JButton();
+        textTeam3 = new javax.swing.JTextField();
+        labTeam3 = new javax.swing.JLabel();
+        textTeam2 = new javax.swing.JTextField();
+        labTeam2 = new javax.swing.JLabel();
+        textTeam1 = new javax.swing.JTextField();
+        labTeam1 = new javax.swing.JLabel();
+        radTeam2 = new javax.swing.JRadioButton();
+        radTeam3 = new javax.swing.JRadioButton();
+        radRound5 = new javax.swing.JRadioButton();
+        radRound10 = new javax.swing.JRadioButton();
+        radRound15 = new javax.swing.JRadioButton();
+        radRound20 = new javax.swing.JRadioButton();
+        butSummitTeams = new javax.swing.JButton();
+        butBackCTeams = new javax.swing.JButton();
+        bground3 = new javax.swing.JLabel();
+        LVL = new javax.swing.JPanel();
+        BACKlvl = new javax.swing.JPanel();
+        butNoBackLvl = new javax.swing.JButton();
+        butYesBackLvl = new javax.swing.JButton();
+        bgroundExit5 = new javax.swing.JLabel();
+        butNONE5 = new javax.swing.JButton();
+        butBackCLvl = new javax.swing.JButton();
+        bground1 = new javax.swing.JLabel();
+        TAGS = new javax.swing.JPanel();
+        BACKtags = new javax.swing.JPanel();
+        butNoBackTags = new javax.swing.JButton();
+        butYesBackTags = new javax.swing.JButton();
+        bgroundExit6 = new javax.swing.JLabel();
+        butNONE6 = new javax.swing.JButton();
+        butBackCTags = new javax.swing.JButton();
+        bground2 = new javax.swing.JLabel();
         PLAY = new javax.swing.JPanel();
         BACKplay = new javax.swing.JPanel();
         butNoBack = new javax.swing.JButton();
@@ -160,13 +203,13 @@ public class CP_GUI extends javax.swing.JFrame {
         labPicture = new javax.swing.JLabel();
         labBGPicture = new javax.swing.JLabel();
         bground4 = new javax.swing.JLabel();
-        LVL = new javax.swing.JPanel();
-        bground1 = new javax.swing.JLabel();
-        TAGS = new javax.swing.JPanel();
-        bground2 = new javax.swing.JLabel();
-        TEAMS = new javax.swing.JPanel();
-        bground3 = new javax.swing.JLabel();
         FINAL = new javax.swing.JPanel();
+        BACKfinal = new javax.swing.JPanel();
+        butNoBackFinal = new javax.swing.JButton();
+        butYesBackFinal = new javax.swing.JButton();
+        bgroundExit7 = new javax.swing.JLabel();
+        butNONE7 = new javax.swing.JButton();
+        butBackCFinal = new javax.swing.JButton();
         bground5 = new javax.swing.JLabel();
         INFO = new javax.swing.JPanel();
         BACKinfo = new javax.swing.JPanel();
@@ -202,7 +245,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butNoExitHomeActionPerformed(evt);
             }
         });
-        EXIThome.add(butNoExitHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+        EXIThome.add(butNoExitHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
         butYesExitHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
         butYesExitHome.setBorder(null);
@@ -216,7 +259,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butYesExitHomeActionPerformed(evt);
             }
         });
-        EXIThome.add(butYesExitHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+        EXIThome.add(butYesExitHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
 
         bgroundExit1.setBackground(new java.awt.Color(250, 250, 250, 0));
         bgroundExit1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -300,6 +343,357 @@ public class CP_GUI extends javax.swing.JFrame {
         bground.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         HOME.add(bground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
 
+        TEAMS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKteams.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKteams.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackTeams.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackTeams.setBorder(null);
+        butNoBackTeams.setBorderPainted(false);
+        butNoBackTeams.setContentAreaFilled(false);
+        butNoBackTeams.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackTeams.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackTeams.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackTeams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackTeamsActionPerformed(evt);
+            }
+        });
+        BACKteams.add(butNoBackTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
+        butYesBackTeams.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackTeams.setBorder(null);
+        butYesBackTeams.setBorderPainted(false);
+        butYesBackTeams.setContentAreaFilled(false);
+        butYesBackTeams.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackTeams.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackTeams.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackTeams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackTeamsActionPerformed(evt);
+            }
+        });
+        BACKteams.add(butYesBackTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
+
+        bgroundExit4.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKteams.add(bgroundExit4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE4.setBorder(null);
+        butNONE4.setBorderPainted(false);
+        butNONE4.setContentAreaFilled(false);
+        butNONE4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE4.setEnabled(false);
+        butNONE4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE4ActionPerformed(evt);
+            }
+        });
+        BACKteams.add(butNONE4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        TEAMS.add(BACKteams, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        textTeam3.setBackground(new java.awt.Color(250, 250, 250, 0));
+        textTeam3.setFont(new java.awt.Font("Maiandra GD", 1, 18)); // NOI18N
+        textTeam3.setForeground(new java.awt.Color(100, 10, 178));
+        textTeam3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textTeam3.setText("EQUIPO 3");
+        textTeam3.setBorder(null);
+        textTeam3.setEnabled(false);
+        textTeam3.setSelectedTextColor(new java.awt.Color(41, 181, 184));
+        textTeam3.setSelectionColor(new java.awt.Color(200, 200, 200, 150));
+        TEAMS.add(textTeam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(754, 430, 180, 30));
+
+        labTeam3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labTeam3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_E3.png"))); // NOI18N
+        labTeam3.setEnabled(false);
+        TEAMS.add(labTeam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 270, 50));
+
+        textTeam2.setBackground(new java.awt.Color(250, 250, 250, 0));
+        textTeam2.setFont(new java.awt.Font("Maiandra GD", 1, 18)); // NOI18N
+        textTeam2.setForeground(new java.awt.Color(100, 10, 178));
+        textTeam2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textTeam2.setText("EQUIPO 2");
+        textTeam2.setBorder(null);
+        textTeam2.setSelectedTextColor(new java.awt.Color(41, 181, 184));
+        textTeam2.setSelectionColor(new java.awt.Color(200, 200, 200, 150));
+        TEAMS.add(textTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(754, 360, 180, 30));
+
+        labTeam2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labTeam2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_E2.png"))); // NOI18N
+        labTeam2.setEnabled(false);
+        TEAMS.add(labTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 270, 50));
+
+        textTeam1.setBackground(new java.awt.Color(250, 250, 250, 0));
+        textTeam1.setFont(new java.awt.Font("Maiandra GD", 1, 18)); // NOI18N
+        textTeam1.setForeground(new java.awt.Color(100, 10, 178));
+        textTeam1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textTeam1.setText("EQUIPO 1");
+        textTeam1.setBorder(null);
+        textTeam1.setSelectedTextColor(new java.awt.Color(41, 181, 184));
+        textTeam1.setSelectionColor(new java.awt.Color(200, 200, 200, 150));
+        TEAMS.add(textTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 290, 180, 30));
+
+        labTeam1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labTeam1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_E1.png"))); // NOI18N
+        labTeam1.setEnabled(false);
+        TEAMS.add(labTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 270, 50));
+
+        groupTeams.add(radTeam2);
+        radTeam2.setSelected(true);
+        radTeam2.setBorder(null);
+        radTeam2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radTeam2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_2.png"))); // NOI18N
+        radTeam2.setIconTextGap(0);
+        radTeam2.setOpaque(false);
+        radTeam2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_2.png"))); // NOI18N
+        radTeam2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_2p.png"))); // NOI18N
+        radTeam2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radTeam2ActionPerformed(evt);
+            }
+        });
+        TEAMS.add(radTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 92, 89));
+
+        groupTeams.add(radTeam3);
+        radTeam3.setBorder(null);
+        radTeam3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radTeam3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_3.png"))); // NOI18N
+        radTeam3.setIconTextGap(0);
+        radTeam3.setOpaque(false);
+        radTeam3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_3.png"))); // NOI18N
+        radTeam3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_3p.png"))); // NOI18N
+        radTeam3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radTeam3ActionPerformed(evt);
+            }
+        });
+        TEAMS.add(radTeam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 92, 89));
+
+        groupRounds.add(radRound5);
+        radRound5.setSelected(true);
+        radRound5.setBorder(null);
+        radRound5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5.png"))); // NOI18N
+        radRound5.setIconTextGap(0);
+        radRound5.setOpaque(false);
+        radRound5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5.png"))); // NOI18N
+        radRound5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5p.png"))); // NOI18N
+        TEAMS.add(radRound5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 92, 89));
+
+        groupRounds.add(radRound10);
+        radRound10.setBorder(null);
+        radRound10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10.png"))); // NOI18N
+        radRound10.setIconTextGap(0);
+        radRound10.setOpaque(false);
+        radRound10.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10.png"))); // NOI18N
+        radRound10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10p.png"))); // NOI18N
+        TEAMS.add(radRound10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 92, 89));
+
+        groupRounds.add(radRound15);
+        radRound15.setBorder(null);
+        radRound15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15.png"))); // NOI18N
+        radRound15.setIconTextGap(0);
+        radRound15.setOpaque(false);
+        radRound15.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15.png"))); // NOI18N
+        radRound15.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15p.png"))); // NOI18N
+        TEAMS.add(radRound15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 92, 89));
+
+        groupRounds.add(radRound20);
+        radRound20.setBorder(null);
+        radRound20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20.png"))); // NOI18N
+        radRound20.setIconTextGap(0);
+        radRound20.setOpaque(false);
+        radRound20.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20.png"))); // NOI18N
+        radRound20.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20p.png"))); // NOI18N
+        TEAMS.add(radRound20, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 92, 89));
+
+        butSummitTeams.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_OK.png"))); // NOI18N
+        butSummitTeams.setBorder(null);
+        butSummitTeams.setBorderPainted(false);
+        butSummitTeams.setContentAreaFilled(false);
+        butSummitTeams.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butSummitTeams.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butSummitTeams.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_OKp.png"))); // NOI18N
+        butSummitTeams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butSummitTeamsActionPerformed(evt);
+            }
+        });
+        TEAMS.add(butSummitTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 480, 90, -1));
+
+        butBackCTeams.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCTeams.setBorder(null);
+        butBackCTeams.setBorderPainted(false);
+        butBackCTeams.setContentAreaFilled(false);
+        butBackCTeams.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCTeams.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCTeams.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCTeams.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCTeamsActionPerformed(evt);
+            }
+        });
+        TEAMS.add(butBackCTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 500, 140, -1));
+
+        bground3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_FONDO.png"))); // NOI18N
+        bground3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TEAMS.add(bground3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        LVL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKlvl.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKlvl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackLvl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackLvl.setBorder(null);
+        butNoBackLvl.setBorderPainted(false);
+        butNoBackLvl.setContentAreaFilled(false);
+        butNoBackLvl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackLvl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackLvl.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackLvl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackLvlActionPerformed(evt);
+            }
+        });
+        BACKlvl.add(butNoBackLvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
+        butYesBackLvl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackLvl.setBorder(null);
+        butYesBackLvl.setBorderPainted(false);
+        butYesBackLvl.setContentAreaFilled(false);
+        butYesBackLvl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackLvl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackLvl.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackLvl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackLvlActionPerformed(evt);
+            }
+        });
+        BACKlvl.add(butYesBackLvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
+
+        bgroundExit5.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKlvl.add(bgroundExit5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE5.setBorder(null);
+        butNONE5.setBorderPainted(false);
+        butNONE5.setContentAreaFilled(false);
+        butNONE5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE5.setEnabled(false);
+        butNONE5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE5ActionPerformed(evt);
+            }
+        });
+        BACKlvl.add(butNONE5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        LVL.add(BACKlvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        butBackCLvl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCLvl.setBorder(null);
+        butBackCLvl.setBorderPainted(false);
+        butBackCLvl.setContentAreaFilled(false);
+        butBackCLvl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCLvl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCLvl.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCLvl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCLvlActionPerformed(evt);
+            }
+        });
+        LVL.add(butBackCLvl, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
+
+        bground1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/LVL/2_TITULO.png"))); // NOI18N
+        bground1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        LVL.add(bground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        TAGS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKtags.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKtags.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackTags.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackTags.setBorder(null);
+        butNoBackTags.setBorderPainted(false);
+        butNoBackTags.setContentAreaFilled(false);
+        butNoBackTags.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackTags.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackTags.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackTags.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackTagsActionPerformed(evt);
+            }
+        });
+        BACKtags.add(butNoBackTags, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
+        butYesBackTags.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackTags.setBorder(null);
+        butYesBackTags.setBorderPainted(false);
+        butYesBackTags.setContentAreaFilled(false);
+        butYesBackTags.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackTags.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackTags.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackTags.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackTagsActionPerformed(evt);
+            }
+        });
+        BACKtags.add(butYesBackTags, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
+
+        bgroundExit6.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKtags.add(bgroundExit6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE6.setBorder(null);
+        butNONE6.setBorderPainted(false);
+        butNONE6.setContentAreaFilled(false);
+        butNONE6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE6.setEnabled(false);
+        butNONE6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE6ActionPerformed(evt);
+            }
+        });
+        BACKtags.add(butNONE6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        TAGS.add(BACKtags, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        butBackCTags.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCTags.setBorder(null);
+        butBackCTags.setBorderPainted(false);
+        butBackCTags.setContentAreaFilled(false);
+        butBackCTags.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCTags.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCTags.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCTags.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCTagsActionPerformed(evt);
+            }
+        });
+        TAGS.add(butBackCTags, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
+
+        bground2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_FONDO.png"))); // NOI18N
+        bground2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TAGS.add(bground2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
         PLAY.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BACKplay.setBackground(new java.awt.Color(250, 250, 250, 0));
@@ -317,7 +711,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butNoBackActionPerformed(evt);
             }
         });
-        BACKplay.add(butNoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+        BACKplay.add(butNoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
         butYesBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
         butYesBack.setBorder(null);
@@ -331,7 +725,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butYesBackActionPerformed(evt);
             }
         });
-        BACKplay.add(butYesBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+        BACKplay.add(butYesBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
 
         bgroundExit2.setBackground(new java.awt.Color(250, 250, 250, 0));
         bgroundExit2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -369,7 +763,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butNoExitActionPerformed(evt);
             }
         });
-        EXITplay.add(butNoExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+        EXITplay.add(butNoExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
         butYesExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
         butYesExit.setBorder(null);
@@ -383,7 +777,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butYesExitActionPerformed(evt);
             }
         });
-        EXITplay.add(butYesExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+        EXITplay.add(butYesExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
 
         bgroundExit.setBackground(new java.awt.Color(250, 250, 250, 0));
         bgroundExit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -574,28 +968,73 @@ public class CP_GUI extends javax.swing.JFrame {
         bground4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PLAY.add(bground4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
 
-        LVL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bground1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bground1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/LVL/2_TITULO.png"))); // NOI18N
-        bground1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        LVL.add(bground1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
-
-        TAGS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bground2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bground2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_FONDO.png"))); // NOI18N
-        bground2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TAGS.add(bground2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
-
-        TEAMS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bground3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bground3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_SELECCIONA-TUS.png"))); // NOI18N
-        bground3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TEAMS.add(bground3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
-
         FINAL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKfinal.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKfinal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackFinal.setBorder(null);
+        butNoBackFinal.setBorderPainted(false);
+        butNoBackFinal.setContentAreaFilled(false);
+        butNoBackFinal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackFinal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackFinal.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackFinalActionPerformed(evt);
+            }
+        });
+        BACKfinal.add(butNoBackFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
+        butYesBackFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackFinal.setBorder(null);
+        butYesBackFinal.setBorderPainted(false);
+        butYesBackFinal.setContentAreaFilled(false);
+        butYesBackFinal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackFinal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackFinal.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackFinalActionPerformed(evt);
+            }
+        });
+        BACKfinal.add(butYesBackFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
+
+        bgroundExit7.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKfinal.add(bgroundExit7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE7.setBorder(null);
+        butNONE7.setBorderPainted(false);
+        butNONE7.setContentAreaFilled(false);
+        butNONE7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE7.setEnabled(false);
+        butNONE7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE7ActionPerformed(evt);
+            }
+        });
+        BACKfinal.add(butNONE7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        FINAL.add(BACKfinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        butBackCFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCFinal.setBorder(null);
+        butBackCFinal.setBorderPainted(false);
+        butBackCFinal.setContentAreaFilled(false);
+        butBackCFinal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCFinal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCFinal.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCFinalActionPerformed(evt);
+            }
+        });
+        FINAL.add(butBackCFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
 
         bground5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bground5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/FINAL/5_FONDO.png"))); // NOI18N
@@ -619,7 +1058,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butNoBackInfoActionPerformed(evt);
             }
         });
-        BACKinfo.add(butNoBackInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, -1, -1));
+        BACKinfo.add(butNoBackInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
 
         butYesBackInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
         butYesBackInfo.setBorder(null);
@@ -633,7 +1072,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butYesBackInfoActionPerformed(evt);
             }
         });
-        BACKinfo.add(butYesBackInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+        BACKinfo.add(butYesBackInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
 
         bgroundExit3.setBackground(new java.awt.Color(250, 250, 250, 0));
         bgroundExit3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -761,7 +1200,7 @@ public class CP_GUI extends javax.swing.JFrame {
 
     private void butPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPlayActionPerformed
         // TODO add your handling code here:
-        PLAY.setVisible(true);
+        TEAMS.setVisible(true);
         HOME.setVisible(false);
     }//GEN-LAST:event_butPlayActionPerformed
 
@@ -776,8 +1215,30 @@ public class CP_GUI extends javax.swing.JFrame {
     private void resetGame(){
     //REINICIA BOTONES
     
-        BACKplay.setVisible(false);
+        //TEAMS
+        groupRounds.clearSelection();
+        radRound5.setSelected(true);
+        groupTeams.clearSelection();
+        radTeam2.setSelected(true);
+        textTeam1.setText("EQUIPO 1");
+        textTeam2.setText("EQUIPO 2");
+        textTeam3.setText("EQUIPO 3");
+        labTeam1.setEnabled(true);
+        labTeam2.setEnabled(true);
+        labTeam3.setEnabled(false);
+        textTeam1.setEnabled(true);
+        textTeam2.setEnabled(true);
+        textTeam3.setEnabled(false);
         
+        //BACK PANELS
+        BACKplay.setVisible(false);
+        BACKteams.setVisible(false);
+        BACKlvl.setVisible(false);
+        BACKtags.setVisible(false);
+        BACKfinal.setVisible(false);
+        
+        
+        //PLAY
         labTimeCounter.setVisible(false);
         butBAD.setVisible(false);
         butGOOD.setVisible(false);
@@ -794,7 +1255,6 @@ public class CP_GUI extends javax.swing.JFrame {
         butStartTime.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ-AC.png")));
         labPicture.setIcon(null);
         butShowAnsw.setVisible(true);
-        
         butNext.setVisible(false);
         
         //REINICIA VARIABLES
@@ -1008,6 +1468,8 @@ public class CP_GUI extends javax.swing.JFrame {
         
         INFO.setVisible(false);
         HOME.setVisible(true);
+        
+        BACKinfo.setVisible(false);
     }//GEN-LAST:event_butYesBackInfoActionPerformed
 
     private void butNONE3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE3ActionPerformed
@@ -1018,6 +1480,123 @@ public class CP_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         BACKinfo.setVisible(true);       
     }//GEN-LAST:event_butBackCInfoActionPerformed
+
+    private void butNoBackTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackTeamsActionPerformed
+        // TODO add your handling code here:
+        BACKteams.setVisible(false);
+    }//GEN-LAST:event_butNoBackTeamsActionPerformed
+
+    private void butYesBackTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackTeamsActionPerformed
+        // TODO add your handling code here:
+        HOME.setVisible(true);
+        TEAMS.setVisible(false);
+        
+        resetGame();
+        
+    }//GEN-LAST:event_butYesBackTeamsActionPerformed
+
+    private void butNONE4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE4ActionPerformed
+
+    private void butBackCTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCTeamsActionPerformed
+        // TODO add your handling code here:
+        BACKteams.setVisible(true);
+    }//GEN-LAST:event_butBackCTeamsActionPerformed
+
+    private void butNoBackLvlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackLvlActionPerformed
+        // TODO add your handling code here:
+        BACKlvl.setVisible(false);
+    }//GEN-LAST:event_butNoBackLvlActionPerformed
+
+    private void butYesBackLvlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackLvlActionPerformed
+        // TODO add your handling code here:
+        LVL.setVisible(false);
+        HOME.setVisible(true);
+        
+        resetGame();
+    }//GEN-LAST:event_butYesBackLvlActionPerformed
+
+    private void butNONE5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE5ActionPerformed
+
+    private void butBackCLvlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCLvlActionPerformed
+        // TODO add your handling code here:
+        BACKlvl.setVisible(true);
+    }//GEN-LAST:event_butBackCLvlActionPerformed
+
+    private void butNoBackTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackTagsActionPerformed
+        // TODO add your handling code here:
+        BACKtags.setVisible(false);
+    }//GEN-LAST:event_butNoBackTagsActionPerformed
+
+    private void butYesBackTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackTagsActionPerformed
+        // TODO add your handling code here:
+        BACKtags.setVisible(false);
+        TAGS.setVisible(false);
+        HOME.setVisible(true);
+        
+        resetGame();
+    }//GEN-LAST:event_butYesBackTagsActionPerformed
+
+    private void butNONE6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE6ActionPerformed
+
+    private void butBackCTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCTagsActionPerformed
+        // TODO add your handling code here:
+        BACKtags.setVisible(true);
+    }//GEN-LAST:event_butBackCTagsActionPerformed
+
+    private void butNoBackFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackFinalActionPerformed
+        // TODO add your handling code here:
+        BACKfinal.setVisible(false);
+    }//GEN-LAST:event_butNoBackFinalActionPerformed
+
+    private void butYesBackFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackFinalActionPerformed
+        // TODO add your handling code here:
+        BACKfinal.setVisible(false);
+        FINAL.setVisible(false);
+        HOME.setVisible(true);
+        
+        resetGame();
+    }//GEN-LAST:event_butYesBackFinalActionPerformed
+
+    private void butNONE7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE7ActionPerformed
+
+    private void butBackCFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCFinalActionPerformed
+        // TODO add your handling code here:
+        BACKfinal.setVisible(true);
+    }//GEN-LAST:event_butBackCFinalActionPerformed
+
+    private void radTeam3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radTeam3ActionPerformed
+        // TODO add your handling code here:
+        labTeam1.setEnabled(true);
+        labTeam2.setEnabled(true);
+        labTeam3.setEnabled(true);
+        textTeam1.setEnabled(true);
+        textTeam2.setEnabled(true);
+        textTeam3.setEnabled(true);
+    }//GEN-LAST:event_radTeam3ActionPerformed
+
+    private void radTeam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radTeam2ActionPerformed
+        // TODO add your handling code here:
+        labTeam1.setEnabled(true);
+        labTeam2.setEnabled(true);
+        labTeam3.setEnabled(false);
+        textTeam1.setEnabled(true);
+        textTeam2.setEnabled(true);
+        textTeam3.setEnabled(false);
+    }//GEN-LAST:event_radTeam2ActionPerformed
+
+    private void butSummitTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTeamsActionPerformed
+        // TODO add your handling code here:
+        TEAMS.setVisible(false);
+        LVL.setVisible(true);
+    }//GEN-LAST:event_butSummitTeamsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1056,8 +1635,12 @@ public class CP_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BACKfinal;
     private javax.swing.JPanel BACKinfo;
+    private javax.swing.JPanel BACKlvl;
     private javax.swing.JPanel BACKplay;
+    private javax.swing.JPanel BACKtags;
+    private javax.swing.JPanel BACKteams;
     private javax.swing.JPanel EXIThome;
     private javax.swing.JPanel EXITplay;
     private javax.swing.JPanel FINAL;
@@ -1078,9 +1661,17 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel bgroundExit1;
     private javax.swing.JLabel bgroundExit2;
     private javax.swing.JLabel bgroundExit3;
+    private javax.swing.JLabel bgroundExit4;
+    private javax.swing.JLabel bgroundExit5;
+    private javax.swing.JLabel bgroundExit6;
+    private javax.swing.JLabel bgroundExit7;
     private javax.swing.JButton butBAD;
     private javax.swing.JButton butBackC;
+    private javax.swing.JButton butBackCFinal;
     private javax.swing.JButton butBackCInfo;
+    private javax.swing.JButton butBackCLvl;
+    private javax.swing.JButton butBackCTags;
+    private javax.swing.JButton butBackCTeams;
     private javax.swing.JButton butConfig;
     private javax.swing.JButton butEnter;
     private javax.swing.JButton butExitC;
@@ -1090,9 +1681,17 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JButton butNONE1;
     private javax.swing.JButton butNONE2;
     private javax.swing.JButton butNONE3;
+    private javax.swing.JButton butNONE4;
+    private javax.swing.JButton butNONE5;
+    private javax.swing.JButton butNONE6;
+    private javax.swing.JButton butNONE7;
     private javax.swing.JButton butNext;
     private javax.swing.JButton butNoBack;
+    private javax.swing.JButton butNoBackFinal;
     private javax.swing.JButton butNoBackInfo;
+    private javax.swing.JButton butNoBackLvl;
+    private javax.swing.JButton butNoBackTags;
+    private javax.swing.JButton butNoBackTeams;
     private javax.swing.JButton butNoExit;
     private javax.swing.JButton butNoExitHome;
     private javax.swing.JButton butPlay;
@@ -1100,16 +1699,35 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JButton butSalir;
     private javax.swing.JButton butShowAnsw;
     private javax.swing.JButton butStartTime;
+    private javax.swing.JButton butSummitTeams;
     private javax.swing.JButton butYesBack;
+    private javax.swing.JButton butYesBackFinal;
     private javax.swing.JButton butYesBackInfo;
+    private javax.swing.JButton butYesBackLvl;
+    private javax.swing.JButton butYesBackTags;
+    private javax.swing.JButton butYesBackTeams;
     private javax.swing.JButton butYesExit;
     private javax.swing.JButton butYesExitHome;
+    private javax.swing.ButtonGroup groupRounds;
+    private javax.swing.ButtonGroup groupTeams;
     private javax.swing.JLabel labBGPicture;
     private javax.swing.JLabel labFramePicture;
     private javax.swing.JLabel labPicture;
     private javax.swing.JLabel labRoundCounter;
+    private javax.swing.JLabel labTeam1;
+    private javax.swing.JLabel labTeam2;
+    private javax.swing.JLabel labTeam3;
     private javax.swing.JLabel labText;
     private javax.swing.JLabel labTimeCounter;
+    private javax.swing.JRadioButton radRound10;
+    private javax.swing.JRadioButton radRound15;
+    private javax.swing.JRadioButton radRound20;
+    private javax.swing.JRadioButton radRound5;
+    private javax.swing.JRadioButton radTeam2;
+    private javax.swing.JRadioButton radTeam3;
     private javax.swing.JTextField textPicture;
+    private javax.swing.JTextField textTeam1;
+    private javax.swing.JTextField textTeam2;
+    private javax.swing.JTextField textTeam3;
     // End of variables declaration//GEN-END:variables
 }
