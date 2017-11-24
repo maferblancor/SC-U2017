@@ -120,7 +120,7 @@ public class AppManager {
         //Aqui deberia agregarse el DONDE las palabras sean de 
         //nivel TAL y categoria TAL
         //String query = "select * from Palabras where ? and ?";
-        
+
         this.palabras.clear();
         String query = "select * from Palabras";
         
@@ -130,7 +130,7 @@ public class AppManager {
             //pst.setInt(1, xRondas);
             
             rs = pst.executeQuery();
-            
+
             while(rs.next()){
                 String p = rs.getString(2);
                 String u = rs.getString(3);
