@@ -907,6 +907,7 @@ public class CP_GUI extends javax.swing.JFrame {
         butStartTime.setBorderPainted(false);
         butStartTime.setContentAreaFilled(false);
         butStartTime.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butStartTime.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_SEGUNDOS.png"))); // NOI18N
         butStartTime.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         butStartTime.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ-AC.png"))); // NOI18N
         butStartTime.addActionListener(new java.awt.event.ActionListener() {
