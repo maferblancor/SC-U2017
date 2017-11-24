@@ -31,9 +31,22 @@ public class CP_GUI extends javax.swing.JFrame {
     ActionListener descontarSegundo = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            temporizador.tictoc();		  
+            String tiempo = String.valueOf(temporizador.getiTime());
+            labTimeCounter.setText(tiempo);
+            
+            temporizador.tictoc();
+            
+            System.out.println(temporizador.getiTime());
 
-            if (temporizador.getiTime() == 0){
+            if (temporizador.getiTime() == -1){
+                butEnter.setEnabled(false);
+                textPicture.setEnabled(false);
+                labText.setEnabled(false);
+
+                labTimeCounter.setVisible(false);
+                butStartTime.setVisible(false);
+                butResetTime.setVisible(true);
+                
                 temporizador.stop();
             }
         }
@@ -63,7 +76,7 @@ public class CP_GUI extends javax.swing.JFrame {
         Usar temporizador.restart() para reiniciar el temporizador.
         Usar temporizador.getiTime() para saber en que segundo va el temporizador.
         */
-        temporizador = new Temporizador(30,1000, descontarSegundo);
+        temporizador = new Temporizador(5,1000, descontarSegundo);
         
         wordList = AppManager.instance.getPalabras();
         word = wordList.get(0).getNombre();
@@ -837,17 +850,17 @@ public class CP_GUI extends javax.swing.JFrame {
         
       //TEMPORIZADOR
       
-        labTimeCounter.setText("1");
+        butStartTime.setEnabled(false);
+        butEnter.setEnabled(true);
+        labText.setEnabled(true);
+        
+        temporizador.startAt(6);
+        labTimeCounter.setText(String.valueOf(temporizador.getiTime() + 1));
+        
         
       // LUEGO DEL TIEMPO
         
-        butEnter.setEnabled(false);
-        textPicture.setEnabled(false);
-        labText.setEnabled(false);
-        
-        labTimeCounter.setVisible(false);
-        butStartTime.setVisible(false);
-        butResetTime.setVisible(true);
+        /*De esto se encarga la accion descontarSegundo() en la linea 31*/
                 
     }//GEN-LAST:event_butStartTimeActionPerformed
 
@@ -871,12 +884,15 @@ public class CP_GUI extends javax.swing.JFrame {
         butResetTime.setVisible(false);
         butEnter.setEnabled(true);
         textPicture.setEnabled(true);
-        textPicture.setText("");
         labText.setEnabled(true);
         butStartTime.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butStartTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ.png")));
         butStartTime.setRolloverEnabled(true); 
         butStartTime.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ-AC.png")));
+        
+        //Para reiniciar el temporizador
+        butStartTime.setEnabled(true);
+        
     }//GEN-LAST:event_butResetTimeActionPerformed
 
     private void butGOODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butGOODActionPerformed
