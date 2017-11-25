@@ -1556,6 +1556,7 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butBADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBADActionPerformed
         // TODO add your handling code here:
         butBAD.setVisible(false);
+        resetTimerButton();
     }//GEN-LAST:event_butBADActionPerformed
 
     private void butNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNextActionPerformed
