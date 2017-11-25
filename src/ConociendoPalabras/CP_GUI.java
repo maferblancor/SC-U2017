@@ -35,8 +35,6 @@ public class CP_GUI extends javax.swing.JFrame {
             labTimeCounter.setText(tiempo);
             
             temporizador.tictoc();
-            
-            System.out.println(temporizador.getiTime());
 
             if (temporizador.getiTime() == -1){
                 butEnter.setEnabled(false);
@@ -51,6 +49,22 @@ public class CP_GUI extends javax.swing.JFrame {
             }
         }
     };
+    
+    private void resetTimerButton(){
+        
+        
+        labTimeCounter.setVisible(false);
+        butStartTime.setVisible(true);
+        butStartTime.setEnabled(true);
+        
+        textPicture.setEnabled(false);
+        labText.setEnabled(false);
+        
+        butStartTime.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butStartTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ.png")));
+        butStartTime.setRolloverEnabled(true); 
+        butStartTime.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ-AC.png")));
+    }
     
     /**
      * Creates new form CP_GUI
@@ -1264,10 +1278,10 @@ public class CP_GUI extends javax.swing.JFrame {
         
         butStartTime.setVisible(true);
         butResetTime.setVisible(false);
-        butEnter.setEnabled(true);
-        textPicture.setEnabled(true);
+        butEnter.setEnabled(false);
+        textPicture.setEnabled(false);
         textPicture.setText("");
-        labText.setEnabled(true);
+        labText.setEnabled(false);
         butStartTime.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         butStartTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_RELOJ.png")));
         butStartTime.setRolloverEnabled(true); 
@@ -1287,10 +1301,16 @@ public class CP_GUI extends javax.swing.JFrame {
         team2Score = 0;
         team3Score = 0;
         
+               
         word = wordList.get(0).getNombre();
         picture = wordList.get(0).getURLImagen();
         
         labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        
+        //REINICIO DE TEMPORIZADOR        
+        
+        temporizador.stop();
+        butStartTime.setEnabled(true);
         
         //REINICIA CONTADOR
         labRoundCounter.setText(roundCount + "/" + roundTotal);
@@ -1317,6 +1337,9 @@ public class CP_GUI extends javax.swing.JFrame {
         butEnter.setEnabled(false);
         butShowAnsw.setVisible(false);
         butNext.setVisible(true);
+        
+        textPicture.setEnabled(false);
+        temporizador.stop();
     }//GEN-LAST:event_butShowAnswActionPerformed
 
     private void butStartTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butStartTimeActionPerformed
@@ -1331,6 +1354,7 @@ public class CP_GUI extends javax.swing.JFrame {
         butStartTime.setEnabled(false);
         butEnter.setEnabled(true);
         labText.setEnabled(true);
+        textPicture.setEnabled(true);
         
         temporizador.startAt(29);
         labTimeCounter.setText(String.valueOf(temporizador.getiTime() + 1));
@@ -1349,9 +1373,11 @@ public class CP_GUI extends javax.swing.JFrame {
         
         if(text.equals(word)){
             butGOOD.setVisible(true);
+            temporizador.stop();
         }
         else{ 
             butBAD.setVisible(true);
+            temporizador.stop();
         }
 
     }//GEN-LAST:event_butEnterActionPerformed
@@ -1376,6 +1402,11 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butGOODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butGOODActionPerformed
         // TODO add your handling code here:
         butGOOD.setVisible(false);
+        resetTimerButton();
+        
+        
+        textPicture.setEnabled(false);
+        butEnter.setEnabled(false);
 
         roundCount++;
         if (roundCount > roundTotal){
@@ -1411,6 +1442,8 @@ public class CP_GUI extends javax.swing.JFrame {
         butEnter.setEnabled(true);
         butNext.setVisible(false);
         butShowAnsw.setVisible(true);
+        
+        resetTimerButton();
         
         //DEFINE NUEVA IMAGEN Y PALABRA
          roundCount++;
