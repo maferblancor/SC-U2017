@@ -21,3 +21,9 @@ CREATE TABLE IF NOT EXISTS PalabrasNivel(
   nivel INTEGER REFERENCES  Niveles,
   PRIMARY KEY (palabra, nivel)
 );
+
+CREATE TABLE IF NOT EXISTS CategoriasNivel(
+  categoria INTEGER REFERENCES Categorias,
+  nivel INTEGER REFERENCES Niveles,
+  PRIMARY KEY(categoria,nivel)
+);
