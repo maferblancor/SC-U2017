@@ -1629,6 +1629,7 @@ public class CP_GUI extends javax.swing.JFrame {
         butEnter.setEnabled(false);
         butShowAnsw.setVisible(false);
         butNext.setVisible(true);
+        labText.setEnabled(true);
         
         textPicture.setEnabled(false);
         temporizador.stop();
@@ -1739,13 +1740,13 @@ public class CP_GUI extends javax.swing.JFrame {
         butNext.setVisible(false);
         butShowAnsw.setVisible(true);
         
-<<<<<<< HEAD
+
         resetTimerButton();
-=======
+
         butEnter.setEnabled(false);
         textPicture.setEnabled(false);
         labText.setEnabled(false);
->>>>>>> ElRetornoDelRamazo
+
         
         //DEFINE NUEVA IMAGEN Y PALABRA
          roundCount++;
