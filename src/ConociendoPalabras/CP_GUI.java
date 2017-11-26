@@ -24,6 +24,7 @@ public class CP_GUI extends javax.swing.JFrame {
     int team1Score = 0;
     int team2Score = 0;
     int team3Score = 0;
+ 
     int level = 1;
     
     List<Palabra> wordList; 
@@ -112,6 +113,14 @@ public class CP_GUI extends javax.swing.JFrame {
             textPicture.setEnabled(false);
             labText.setEnabled(false);
             
+            butPointBG.setVisible(false);
+            butPointTeam1.setVisible(false);
+            butPointTeam2.setVisible(false);
+            butPointTeam3.setVisible(false);
+            labPointTeam1.setVisible(false);
+            labPointTeam2.setVisible(false);
+            labPointTeam3.setVisible(false);
+            
         LVL.setVisible(false);
              BACKlvl.setVisible(false);
         
@@ -126,6 +135,9 @@ public class CP_GUI extends javax.swing.JFrame {
        
         FINAL.setVisible(false);
             BACKfinal.setVisible(false);
+            scrollWordsT1.getViewport().setOpaque(false);
+            scrollWordsT2.getViewport().setOpaque(false);
+            scrollWordsT3.getViewport().setOpaque(false);
         
         EXITplay.setVisible(false);
         EXIThome.setVisible(false);
@@ -223,6 +235,13 @@ public class CP_GUI extends javax.swing.JFrame {
         butYesExit = new javax.swing.JButton();
         bgroundExit = new javax.swing.JLabel();
         butNONE = new javax.swing.JButton();
+        labPointTeam3 = new javax.swing.JLabel();
+        butPointTeam3 = new javax.swing.JButton();
+        labPointTeam2 = new javax.swing.JLabel();
+        butPointTeam2 = new javax.swing.JButton();
+        labPointTeam1 = new javax.swing.JLabel();
+        butPointTeam1 = new javax.swing.JButton();
+        butPointBG = new javax.swing.JButton();
         butGOOD = new javax.swing.JButton();
         butBAD = new javax.swing.JButton();
         textPicture = new javax.swing.JTextField();
@@ -246,7 +265,20 @@ public class CP_GUI extends javax.swing.JFrame {
         butYesBackFinal = new javax.swing.JButton();
         bgroundExit7 = new javax.swing.JLabel();
         butNONE7 = new javax.swing.JButton();
+        labT3 = new javax.swing.JLabel();
+        labT2 = new javax.swing.JLabel();
+        labT1 = new javax.swing.JLabel();
         butBackCFinal = new javax.swing.JButton();
+        scrollWordsT1 = new javax.swing.JScrollPane();
+        textWordsT1 = new javax.swing.JTextArea();
+        scrollWordsT3 = new javax.swing.JScrollPane();
+        textWordsT3 = new javax.swing.JTextArea();
+        scrollWordsT2 = new javax.swing.JScrollPane();
+        textWordsT2 = new javax.swing.JTextArea();
+        labScoreT3 = new javax.swing.JLabel();
+        labScoreT2 = new javax.swing.JLabel();
+        labScoreT1 = new javax.swing.JLabel();
+        labWinner = new javax.swing.JLabel();
         bground5 = new javax.swing.JLabel();
         INFO = new javax.swing.JPanel();
         BACKinfo = new javax.swing.JPanel();
@@ -473,6 +505,11 @@ public class CP_GUI extends javax.swing.JFrame {
         textTeam1.setBorder(null);
         textTeam1.setSelectedTextColor(new java.awt.Color(41, 181, 184));
         textTeam1.setSelectionColor(new java.awt.Color(200, 200, 200, 150));
+        textTeam1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textTeam1ActionPerformed(evt);
+            }
+        });
         TEAMS.add(textTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 290, 180, 30));
 
         labTeam1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -598,7 +635,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butBackCTeamsActionPerformed(evt);
             }
         });
-        TEAMS.add(butBackCTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 500, 140, -1));
+        TEAMS.add(butBackCTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 499, 140, -1));
 
         bground3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bground3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_FONDO.png"))); // NOI18N
@@ -1095,6 +1132,90 @@ public class CP_GUI extends javax.swing.JFrame {
 
         PLAY.add(EXITplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        labPointTeam3.setFont(new java.awt.Font("Maiandra GD", 1, 28)); // NOI18N
+        labPointTeam3.setForeground(new java.awt.Color(51, 65, 82));
+        labPointTeam3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labPointTeam3.setText("EQUIPO 3");
+        labPointTeam3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labPointTeam3.setEnabled(false);
+        PLAY.add(labPointTeam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 250, 50));
+
+        butPointTeam3.setFont(new java.awt.Font("Maiandra GD", 1, 28)); // NOI18N
+        butPointTeam3.setForeground(new java.awt.Color(51, 65, 82));
+        butPointTeam3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_t3.png"))); // NOI18N
+        butPointTeam3.setBorder(null);
+        butPointTeam3.setBorderPainted(false);
+        butPointTeam3.setContentAreaFilled(false);
+        butPointTeam3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butPointTeam3.setEnabled(false);
+        butPointTeam3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butPointTeam3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_t3p.png"))); // NOI18N
+        butPointTeam3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPointTeam3ActionPerformed(evt);
+            }
+        });
+        PLAY.add(butPointTeam3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, 290, 190));
+
+        labPointTeam2.setFont(new java.awt.Font("Maiandra GD", 1, 28)); // NOI18N
+        labPointTeam2.setForeground(new java.awt.Color(51, 65, 82));
+        labPointTeam2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labPointTeam2.setText("EQUIPO 2");
+        labPointTeam2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PLAY.add(labPointTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 250, 50));
+
+        butPointTeam2.setFont(new java.awt.Font("Maiandra GD", 1, 28)); // NOI18N
+        butPointTeam2.setForeground(new java.awt.Color(51, 65, 82));
+        butPointTeam2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_t2.png"))); // NOI18N
+        butPointTeam2.setBorder(null);
+        butPointTeam2.setBorderPainted(false);
+        butPointTeam2.setContentAreaFilled(false);
+        butPointTeam2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butPointTeam2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butPointTeam2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_t2p.png"))); // NOI18N
+        butPointTeam2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPointTeam2ActionPerformed(evt);
+            }
+        });
+        PLAY.add(butPointTeam2, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 290, -1, 190));
+
+        labPointTeam1.setFont(new java.awt.Font("Maiandra GD", 1, 28)); // NOI18N
+        labPointTeam1.setForeground(new java.awt.Color(51, 65, 82));
+        labPointTeam1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labPointTeam1.setText("EQUIPO 1");
+        labPointTeam1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PLAY.add(labPointTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 250, 50));
+
+        butPointTeam1.setFont(new java.awt.Font("Maiandra GD", 1, 28)); // NOI18N
+        butPointTeam1.setForeground(new java.awt.Color(51, 65, 82));
+        butPointTeam1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_t1.png"))); // NOI18N
+        butPointTeam1.setBorder(null);
+        butPointTeam1.setBorderPainted(false);
+        butPointTeam1.setContentAreaFilled(false);
+        butPointTeam1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butPointTeam1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butPointTeam1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_t1p.png"))); // NOI18N
+        butPointTeam1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPointTeam1ActionPerformed(evt);
+            }
+        });
+        PLAY.add(butPointTeam1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 290, 190));
+
+        butPointBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/4_PUNTO.png"))); // NOI18N
+        butPointBG.setBorder(null);
+        butPointBG.setBorderPainted(false);
+        butPointBG.setContentAreaFilled(false);
+        butPointBG.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        butPointBG.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butPointBG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPointBGActionPerformed(evt);
+            }
+        });
+        PLAY.add(butPointBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
         butGOOD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PLAY/GOOD.png"))); // NOI18N
         butGOOD.setBorder(null);
         butGOOD.setBorderPainted(false);
@@ -1318,6 +1439,24 @@ public class CP_GUI extends javax.swing.JFrame {
 
         FINAL.add(BACKfinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        labT3.setFont(new java.awt.Font("Maiandra GD", 1, 18)); // NOI18N
+        labT3.setForeground(new java.awt.Color(51, 65, 82));
+        labT3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labT3.setText("EQUIPO 3");
+        FINAL.add(labT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 130, 120, 30));
+
+        labT2.setFont(new java.awt.Font("Maiandra GD", 1, 18)); // NOI18N
+        labT2.setForeground(new java.awt.Color(51, 65, 82));
+        labT2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labT2.setText("EQUIPO 2");
+        FINAL.add(labT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(692, 130, 125, 30));
+
+        labT1.setFont(new java.awt.Font("Maiandra GD", 1, 18)); // NOI18N
+        labT1.setForeground(new java.awt.Color(51, 65, 82));
+        labT1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labT1.setText("EQUIPO 1");
+        FINAL.add(labT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 120, 30));
+
         butBackCFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
         butBackCFinal.setBorder(null);
         butBackCFinal.setBorderPainted(false);
@@ -1331,6 +1470,98 @@ public class CP_GUI extends javax.swing.JFrame {
             }
         });
         FINAL.add(butBackCFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
+
+        scrollWordsT1.setBackground(new java.awt.Color(250, 250, 250, 0));
+        scrollWordsT1.setBorder(null);
+        scrollWordsT1.setForeground(new java.awt.Color(41, 181, 184));
+        scrollWordsT1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollWordsT1.setFont(new java.awt.Font("Maiandra GD", 0, 24)); // NOI18N
+        scrollWordsT1.setOpaque(false);
+
+        textWordsT1.setEditable(false);
+        textWordsT1.setBackground(new java.awt.Color(250, 250, 250, 0));
+        textWordsT1.setColumns(1);
+        textWordsT1.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
+        textWordsT1.setForeground(new java.awt.Color(41, 181, 184));
+        textWordsT1.setRows(5);
+        textWordsT1.setText("\n");
+        textWordsT1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(250, 250, 250, 0))); // NOI18N
+        textWordsT1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        textWordsT1.setDisabledTextColor(new java.awt.Color(41, 181, 184));
+        textWordsT1.setEnabled(false);
+        textWordsT1.setOpaque(false);
+        scrollWordsT1.setViewportView(textWordsT1);
+
+        FINAL.add(scrollWordsT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 175, 110, 330));
+
+        scrollWordsT3.setBackground(new java.awt.Color(250, 250, 250, 0));
+        scrollWordsT3.setBorder(null);
+        scrollWordsT3.setForeground(new java.awt.Color(41, 181, 184));
+        scrollWordsT3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollWordsT3.setFont(new java.awt.Font("Maiandra GD", 0, 24)); // NOI18N
+        scrollWordsT3.setOpaque(false);
+
+        textWordsT3.setEditable(false);
+        textWordsT3.setBackground(new java.awt.Color(250, 250, 250, 0));
+        textWordsT3.setColumns(1);
+        textWordsT3.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
+        textWordsT3.setForeground(new java.awt.Color(41, 181, 184));
+        textWordsT3.setRows(5);
+        textWordsT3.setText("\n");
+        textWordsT3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(250, 250, 250, 0))); // NOI18N
+        textWordsT3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        textWordsT3.setDisabledTextColor(new java.awt.Color(41, 181, 184));
+        textWordsT3.setEnabled(false);
+        textWordsT3.setOpaque(false);
+        scrollWordsT3.setViewportView(textWordsT3);
+
+        FINAL.add(scrollWordsT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(831, 175, 110, 330));
+
+        scrollWordsT2.setBackground(new java.awt.Color(250, 250, 250, 0));
+        scrollWordsT2.setBorder(null);
+        scrollWordsT2.setForeground(new java.awt.Color(41, 181, 184));
+        scrollWordsT2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollWordsT2.setFont(new java.awt.Font("Maiandra GD", 0, 24)); // NOI18N
+        scrollWordsT2.setOpaque(false);
+
+        textWordsT2.setEditable(false);
+        textWordsT2.setBackground(new java.awt.Color(250, 250, 250, 0));
+        textWordsT2.setColumns(1);
+        textWordsT2.setFont(new java.awt.Font("Maiandra GD", 1, 14)); // NOI18N
+        textWordsT2.setForeground(new java.awt.Color(41, 181, 184));
+        textWordsT2.setRows(5);
+        textWordsT2.setText("\n");
+        textWordsT2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(250, 250, 250, 0))); // NOI18N
+        textWordsT2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        textWordsT2.setDisabledTextColor(new java.awt.Color(41, 181, 184));
+        textWordsT2.setEnabled(false);
+        textWordsT2.setOpaque(false);
+        scrollWordsT2.setViewportView(textWordsT2);
+
+        FINAL.add(scrollWordsT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 175, 110, 330));
+
+        labScoreT3.setFont(new java.awt.Font("Maiandra GD", 1, 32)); // NOI18N
+        labScoreT3.setForeground(new java.awt.Color(51, 65, 82));
+        labScoreT3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labScoreT3.setText("0");
+        FINAL.add(labScoreT3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 520, 130, 50));
+
+        labScoreT2.setFont(new java.awt.Font("Maiandra GD", 1, 32)); // NOI18N
+        labScoreT2.setForeground(new java.awt.Color(51, 65, 82));
+        labScoreT2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labScoreT2.setText("0");
+        FINAL.add(labScoreT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 520, 120, 50));
+
+        labScoreT1.setFont(new java.awt.Font("Maiandra GD", 1, 32)); // NOI18N
+        labScoreT1.setForeground(new java.awt.Color(51, 65, 82));
+        labScoreT1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labScoreT1.setText("0");
+        FINAL.add(labScoreT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 120, 50));
+
+        labWinner.setFont(new java.awt.Font("Maiandra GD", 1, 30)); // NOI18N
+        labWinner.setForeground(new java.awt.Color(100, 10, 178));
+        labWinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FINAL.add(labWinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 413, 220, 60));
 
         bground5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bground5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/FINAL/5_FONDO.png"))); // NOI18N
@@ -1581,6 +1812,14 @@ public class CP_GUI extends javax.swing.JFrame {
         butShowAnsw.setVisible(true);
         butNext.setVisible(false);
         
+        butPointBG.setVisible(false);
+        butPointTeam1.setVisible(false);
+        butPointTeam2.setVisible(false);
+        butPointTeam3.setVisible(false);
+        labPointTeam1.setVisible(false);
+        labPointTeam2.setVisible(false);
+        labPointTeam3.setVisible(false);
+        
         //REINICIA VARIABLES
         word = "";    //PALABRA CORRECTA CORRESPONDIENTE A LA IMAGEN MOSTRADA ---- DEBERIAS SER EN MAYUSCULAS
         text = "";       //TEXTO INGRESADO POR EL USUARIO
@@ -1591,6 +1830,7 @@ public class CP_GUI extends javax.swing.JFrame {
         team1Score = 0;
         team2Score = 0;
         team3Score = 0;
+
         level = 1;
         
                
@@ -1702,30 +1942,16 @@ public class CP_GUI extends javax.swing.JFrame {
         butGOOD.setVisible(false);
         resetTimerButton();
         
-        
         textPicture.setEnabled(false);
         butEnter.setEnabled(false);
 
-        roundCount++;
-        if (roundCount > roundTotal){
-           //LLAMA VENTANA FINAL
-            PLAY.setVisible(false);
-            HOME.setVisible(true);
-           resetGame();
-        }
-        else{
-            
-       
-            labRoundCounter.setText(roundCount + "/" + roundTotal);
-            textPicture.setText("");
-            
-            //DEFINE NUEVA IMAGEN Y PALABRA
-            
-           word = wordList.get(roundCount - 1).getNombre();
-           picture = wordList.get(roundCount - 1).getURLImagen();
-
-            labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
-        } 
+        butPointBG.setVisible(true);
+        butPointTeam1.setVisible(true);
+        butPointTeam2.setVisible(true);
+        butPointTeam3.setVisible(true);
+        labPointTeam1.setVisible(true);
+        labPointTeam2.setVisible(true);
+        labPointTeam3.setVisible(true);
     }//GEN-LAST:event_butGOODActionPerformed
 
     private void butBADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBADActionPerformed
@@ -1754,8 +1980,45 @@ public class CP_GUI extends javax.swing.JFrame {
         if (roundCount > roundTotal){
            //LLAMA VENTANA FINAL
             PLAY.setVisible(false);
-            HOME.setVisible(true);
-           resetGame();
+            FINAL.setVisible(true);
+            
+            labScoreT1.setText("" + team1Score);
+            labScoreT2.setText("" + team2Score);
+            labScoreT3.setText("" + team3Score);
+            
+            if (team1Score > team2Score){
+                if (team1Score > team3Score){
+                    labWinner.setText(textTeam1.getText().toUpperCase());
+                }
+                else if (team1Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team1Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score < team2Score){
+                if (team2Score > team3Score){
+                    labWinner.setText(textTeam2.getText().toUpperCase());
+                }
+                else if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team2Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score == team2Score){
+                if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else labWinner.setText("EMPATE");
+            }
+            else labWinner.setText("ERROR");
+            
+            
+            
+           //resetGame();
         }
         else{
             labRoundCounter.setText(roundCount + "/" + roundTotal);
@@ -1938,6 +2201,9 @@ public class CP_GUI extends javax.swing.JFrame {
         textTeam3.setEnabled(true);
         
         teams = 3;
+        
+        butPointTeam3.setEnabled(true);
+        labPointTeam3.setEnabled(true);
     }//GEN-LAST:event_radTeam3ActionPerformed
 
     private void radTeam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radTeam2ActionPerformed
@@ -1949,6 +2215,9 @@ public class CP_GUI extends javax.swing.JFrame {
         textTeam2.setEnabled(true);
         textTeam3.setEnabled(false);
         
+        butPointTeam3.setEnabled(false);
+        labPointTeam3.setEnabled(false);
+        
         teams = 2;
     }//GEN-LAST:event_radTeam2ActionPerformed
 
@@ -1956,6 +2225,13 @@ public class CP_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         TEAMS.setVisible(false);
         LVL.setVisible(true);
+        
+        labPointTeam1.setText(textTeam1.getText().toUpperCase());
+        labPointTeam2.setText(textTeam2.getText().toUpperCase());
+        labPointTeam3.setText(textTeam3.getText().toUpperCase());
+        labT1.setText(textTeam1.getText().toUpperCase());
+        labT2.setText(textTeam2.getText().toUpperCase());
+        labT3.setText(textTeam3.getText().toUpperCase());
                 
         //ESCRIBE NUMERO DE RONDAS 
         labRoundCounter.setText(roundCount + "/" + roundTotal);
@@ -2040,6 +2316,240 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butSummitTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTagsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_butSummitTagsActionPerformed
+
+    private void butPointBGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPointBGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butPointBGActionPerformed
+
+    private void butPointTeam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPointTeam1ActionPerformed
+        // TODO add your handling code here:
+        butPointBG.setVisible(false);
+        butPointTeam1.setVisible(false);
+        butPointTeam2.setVisible(false);
+        butPointTeam3.setVisible(false);
+        labPointTeam1.setVisible(false);
+        labPointTeam2.setVisible(false);
+        labPointTeam3.setVisible(false);
+        
+        team1Score++;  
+        
+        if (team1Score == 1) {
+            textWordsT1.setText(" - " + word);
+        }
+        else textWordsT1.setText(textWordsT1.getText() + "\n - " + word);
+        
+        roundCount++;
+        
+        if (roundCount > roundTotal){
+           //LLAMA VENTANA FINAL
+            PLAY.setVisible(false);
+            FINAL.setVisible(true);
+            
+            labScoreT1.setText("" + team1Score);
+            labScoreT2.setText("" + team2Score);
+            labScoreT3.setText("" + team3Score);
+                      
+            if (team1Score > team2Score){
+                if (team1Score > team3Score){
+                    labWinner.setText(textTeam1.getText().toUpperCase());
+                }
+                else if (team1Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team1Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score < team2Score){
+                if (team2Score > team3Score){
+                    labWinner.setText(textTeam2.getText().toUpperCase());
+                }
+                else if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team2Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score == team2Score){
+                if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else labWinner.setText("EMPATE");
+            }
+            else labWinner.setText("ERROR");
+            
+            // EN LA VENTANA FINAL DEBE HACER EL RESET
+            resetGame();
+        }
+        else{
+            
+            labRoundCounter.setText(roundCount + "/" + roundTotal);
+            textPicture.setText("");
+            
+            //DEFINE NUEVA IMAGEN Y PALABRA
+            
+           word = wordList.get(roundCount - 1).getNombre();
+           picture = wordList.get(roundCount - 1).getURLImagen();
+
+            labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        } 
+    }//GEN-LAST:event_butPointTeam1ActionPerformed
+
+    private void butPointTeam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPointTeam2ActionPerformed
+        // TODO add your handling code here:
+        butPointBG.setVisible(false);
+        butPointTeam1.setVisible(false);
+        butPointTeam2.setVisible(false);
+        butPointTeam3.setVisible(false);
+        labPointTeam1.setVisible(false);
+        labPointTeam2.setVisible(false);
+        labPointTeam3.setVisible(false);
+        
+        team2Score++;  
+        
+        if (team2Score == 1) {
+            textWordsT2.setText(" - " + word);
+        }
+        else textWordsT2.setText(textWordsT2.getText() + "\n - " + word);
+        
+        roundCount++;
+        
+        if (roundCount > roundTotal){
+           //LLAMA VENTANA FINAL
+            PLAY.setVisible(false);
+            FINAL.setVisible(true);
+            
+            labScoreT1.setText("" + team1Score);
+            labScoreT2.setText("" + team2Score);
+            labScoreT3.setText("" + team3Score);
+            
+            if (team1Score > team2Score){
+                if (team1Score > team3Score){
+                    labWinner.setText(textTeam1.getText().toUpperCase());
+                }
+                else if (team1Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team1Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score < team2Score){
+                if (team2Score > team3Score){
+                    labWinner.setText(textTeam2.getText().toUpperCase());
+                }
+                else if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team2Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score == team2Score){
+                if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else labWinner.setText("EMPATE");
+            }
+            else labWinner.setText("ERROR");
+            
+            // EN LA VENTANA FINAL DEBE HACER EL RESET
+            resetGame();
+        }
+        else{
+            
+            labRoundCounter.setText(roundCount + "/" + roundTotal);
+            textPicture.setText("");
+            
+            //DEFINE NUEVA IMAGEN Y PALABRA
+            
+           word = wordList.get(roundCount - 1).getNombre();
+           picture = wordList.get(roundCount - 1).getURLImagen();
+
+            labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        } 
+    }//GEN-LAST:event_butPointTeam2ActionPerformed
+
+    private void butPointTeam3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPointTeam3ActionPerformed
+        // TODO add your handling code here:
+        butPointBG.setVisible(false);
+        butPointTeam1.setVisible(false);
+        butPointTeam2.setVisible(false);
+        butPointTeam3.setVisible(false);
+        labPointTeam1.setVisible(false);
+        labPointTeam2.setVisible(false);
+        labPointTeam3.setVisible(false);
+        
+        team3Score++;  
+        
+        if (team3Score == 1) {
+            textWordsT3.setText(" - " + word);
+        }
+        else textWordsT3.setText(textWordsT3.getText() + "\n - " + word);
+        
+        roundCount++;
+        
+        if (roundCount > roundTotal){
+           //LLAMA VENTANA FINAL
+            PLAY.setVisible(false);
+            FINAL.setVisible(true);
+            
+            labScoreT1.setText("" + team1Score);
+            labScoreT2.setText("" + team2Score);
+            labScoreT3.setText("" + team3Score);
+            
+            if (team1Score > team2Score){
+                if (team1Score > team3Score){
+                    labWinner.setText(textTeam1.getText().toUpperCase());
+                }
+                else if (team1Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team1Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score < team2Score){
+                if (team2Score > team3Score){
+                    labWinner.setText(textTeam2.getText().toUpperCase());
+                }
+                else if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else if (team2Score == team3Score){
+                    labWinner.setText("EMPATE");
+                }
+            }
+            else if (team1Score == team2Score){
+                if (team2Score < team3Score){
+                    labWinner.setText(textTeam3.getText().toUpperCase());
+                }
+                else labWinner.setText("EMPATE");
+            }
+            else labWinner.setText("ERROR");
+            
+            
+            // EN LA VENTANA FINAL DEBE HACER EL RESET
+            resetGame();
+        }
+        else{
+            
+            labRoundCounter.setText(roundCount + "/" + roundTotal);
+            textPicture.setText("");
+            
+            //DEFINE NUEVA IMAGEN Y PALABRA
+            
+           word = wordList.get(roundCount - 1).getNombre();
+           picture = wordList.get(roundCount - 1).getURLImagen();
+
+            labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        } 
+    }//GEN-LAST:event_butPointTeam3ActionPerformed
+
+    private void textTeam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTeam1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textTeam1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2146,6 +2656,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JButton butNoExit;
     private javax.swing.JButton butNoExitHome;
     private javax.swing.JButton butPlay;
+    private javax.swing.JButton butPointBG;
+    private javax.swing.JButton butPointTeam1;
+    private javax.swing.JButton butPointTeam2;
+    private javax.swing.JButton butPointTeam3;
     private javax.swing.JButton butResetTime;
     private javax.swing.JButton butSalir;
     private javax.swing.JButton butShowAnsw;
@@ -2175,21 +2689,37 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel labBGPicture;
     private javax.swing.JLabel labFramePicture;
     private javax.swing.JLabel labPicture;
+    private javax.swing.JLabel labPointTeam1;
+    private javax.swing.JLabel labPointTeam2;
+    private javax.swing.JLabel labPointTeam3;
     private javax.swing.JLabel labRoundCounter;
+    private javax.swing.JLabel labScoreT1;
+    private javax.swing.JLabel labScoreT2;
+    private javax.swing.JLabel labScoreT3;
+    private javax.swing.JLabel labT1;
+    private javax.swing.JLabel labT2;
+    private javax.swing.JLabel labT3;
     private javax.swing.JLabel labTeam1;
     private javax.swing.JLabel labTeam2;
     private javax.swing.JLabel labTeam3;
     private javax.swing.JLabel labText;
     private javax.swing.JLabel labTimeCounter;
+    private javax.swing.JLabel labWinner;
     private javax.swing.JRadioButton radRound10;
     private javax.swing.JRadioButton radRound15;
     private javax.swing.JRadioButton radRound20;
     private javax.swing.JRadioButton radRound5;
     private javax.swing.JRadioButton radTeam2;
     private javax.swing.JRadioButton radTeam3;
+    private javax.swing.JScrollPane scrollWordsT1;
+    private javax.swing.JScrollPane scrollWordsT2;
+    private javax.swing.JScrollPane scrollWordsT3;
     private javax.swing.JTextField textPicture;
     private javax.swing.JTextField textTeam1;
     private javax.swing.JTextField textTeam2;
     private javax.swing.JTextField textTeam3;
+    private javax.swing.JTextArea textWordsT1;
+    private javax.swing.JTextArea textWordsT2;
+    private javax.swing.JTextArea textWordsT3;
     // End of variables declaration//GEN-END:variables
 }
