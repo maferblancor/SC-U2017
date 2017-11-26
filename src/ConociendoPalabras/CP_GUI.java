@@ -635,7 +635,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butBackCTeamsActionPerformed(evt);
             }
         });
-        TEAMS.add(butBackCTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 500, 140, -1));
+        TEAMS.add(butBackCTeams, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 499, 140, -1));
 
         bground3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bground3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_FONDO.png"))); // NOI18N
@@ -1469,7 +1469,7 @@ public class CP_GUI extends javax.swing.JFrame {
                 butBackCFinalActionPerformed(evt);
             }
         });
-        FINAL.add(butBackCFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 500, -1, -1));
+        FINAL.add(butBackCFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
 
         scrollWordsT1.setBackground(new java.awt.Color(250, 250, 250, 0));
         scrollWordsT1.setBorder(null);
