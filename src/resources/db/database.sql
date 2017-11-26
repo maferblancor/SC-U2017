@@ -4,8 +4,7 @@ CREATE TABLE IF NOT EXISTS Categorias(
 );
 
 CREATE TABLE IF NOT EXISTS Palabras(
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  nombre VARCHAR(30),
+  nombre VARCHAR(30) PRIMARY KEY,
   imagen VARCHAR(30),
   categoriaId INTEGER REFERENCES Categorias
 );
@@ -17,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Niveles(
 );
 
 CREATE TABLE IF NOT EXISTS PalabrasNivel(
-  palabra INTEGER REFERENCES Palabras,
+  palabra VARCHAR(30) REFERENCES Palabras,
   nivel INTEGER REFERENCES  Niveles,
   PRIMARY KEY (palabra, nivel)
 );
