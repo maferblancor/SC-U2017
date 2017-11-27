@@ -27,6 +27,8 @@ public class CP_GUI extends javax.swing.JFrame {
  
     int level = 1;
     
+    boolean practice = false;
+    
     List<Palabra> wordList; 
     
     Temporizador temporizador;
@@ -132,6 +134,12 @@ public class CP_GUI extends javax.swing.JFrame {
         
         TAGS.setVisible(false);
             BACKtags.setVisible(false);
+            
+        PRACTICE.setVisible(false);
+            BACKpractice.setVisible(false);
+        
+        P_END.setVisible(false);
+            BACKPEnd.setVisible(false);
        
         FINAL.setVisible(false);
             BACKfinal.setVisible(false);
@@ -164,7 +172,7 @@ public class CP_GUI extends javax.swing.JFrame {
         bgroundExit1 = new javax.swing.JLabel();
         butNONE1 = new javax.swing.JButton();
         butSalir = new javax.swing.JButton();
-        butConfig = new javax.swing.JButton();
+        butPractice = new javax.swing.JButton();
         butInfo = new javax.swing.JButton();
         butPlay = new javax.swing.JButton();
         bground = new javax.swing.JLabel();
@@ -288,6 +296,27 @@ public class CP_GUI extends javax.swing.JFrame {
         butNONE3 = new javax.swing.JButton();
         butBackCInfo = new javax.swing.JButton();
         bground6 = new javax.swing.JLabel();
+        P_END = new javax.swing.JPanel();
+        BACKPEnd = new javax.swing.JPanel();
+        butNoBackPEnd = new javax.swing.JButton();
+        butYesBackPEnd = new javax.swing.JButton();
+        bgroundExit9 = new javax.swing.JLabel();
+        butNONE9 = new javax.swing.JButton();
+        butBackCPEnd = new javax.swing.JButton();
+        bground8 = new javax.swing.JLabel();
+        PRACTICE = new javax.swing.JPanel();
+        BACKpractice = new javax.swing.JPanel();
+        butNoBackPractice = new javax.swing.JButton();
+        butYesBackPractice = new javax.swing.JButton();
+        bgroundExit8 = new javax.swing.JLabel();
+        butNONE8 = new javax.swing.JButton();
+        butSummitTeamsP = new javax.swing.JButton();
+        radRound6 = new javax.swing.JRadioButton();
+        radRound11 = new javax.swing.JRadioButton();
+        radRound16 = new javax.swing.JRadioButton();
+        radRound21 = new javax.swing.JRadioButton();
+        butBackCPractice = new javax.swing.JButton();
+        bground7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONOCIENDO PALABRAS ");
@@ -365,19 +394,19 @@ public class CP_GUI extends javax.swing.JFrame {
         });
         HOME.add(butSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
 
-        butConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_CONFIG.png"))); // NOI18N
-        butConfig.setBorder(null);
-        butConfig.setBorderPainted(false);
-        butConfig.setContentAreaFilled(false);
-        butConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        butConfig.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        butConfig.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_CONFIGp.png"))); // NOI18N
-        butConfig.addActionListener(new java.awt.event.ActionListener() {
+        butPractice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_CONFIG.png"))); // NOI18N
+        butPractice.setBorder(null);
+        butPractice.setBorderPainted(false);
+        butPractice.setContentAreaFilled(false);
+        butPractice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butPractice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butPractice.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_CONFIGp.png"))); // NOI18N
+        butPractice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butConfigActionPerformed(evt);
+                butPracticeActionPerformed(evt);
             }
         });
-        HOME.add(butConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
+        HOME.add(butPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, -1));
 
         butInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/HOME/1_ABOUT.png"))); // NOI18N
         butInfo.setBorder(null);
@@ -1641,6 +1670,227 @@ public class CP_GUI extends javax.swing.JFrame {
         bground6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         INFO.add(bground6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
 
+        P_END.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKPEnd.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKPEnd.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackPEnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackPEnd.setBorder(null);
+        butNoBackPEnd.setBorderPainted(false);
+        butNoBackPEnd.setContentAreaFilled(false);
+        butNoBackPEnd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackPEnd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackPEnd.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackPEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackPEndActionPerformed(evt);
+            }
+        });
+        BACKPEnd.add(butNoBackPEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
+        butYesBackPEnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackPEnd.setBorder(null);
+        butYesBackPEnd.setBorderPainted(false);
+        butYesBackPEnd.setContentAreaFilled(false);
+        butYesBackPEnd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackPEnd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackPEnd.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackPEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackPEndActionPerformed(evt);
+            }
+        });
+        BACKPEnd.add(butYesBackPEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
+
+        bgroundExit9.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKPEnd.add(bgroundExit9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE9.setBorder(null);
+        butNONE9.setBorderPainted(false);
+        butNONE9.setContentAreaFilled(false);
+        butNONE9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE9.setEnabled(false);
+        butNONE9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE9ActionPerformed(evt);
+            }
+        });
+        BACKPEnd.add(butNONE9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        P_END.add(BACKPEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        butBackCPEnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCPEnd.setBorder(null);
+        butBackCPEnd.setBorderPainted(false);
+        butBackCPEnd.setContentAreaFilled(false);
+        butBackCPEnd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCPEnd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCPEnd.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCPEnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCPEndActionPerformed(evt);
+            }
+        });
+        P_END.add(butBackCPEnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
+
+        bground8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PRACTICE/6_END.png"))); // NOI18N
+        bground8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        P_END.add(bground8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        PRACTICE.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BACKpractice.setBackground(new java.awt.Color(250, 250, 250, 0));
+        BACKpractice.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        butNoBackPractice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NO.png"))); // NOI18N
+        butNoBackPractice.setBorder(null);
+        butNoBackPractice.setBorderPainted(false);
+        butNoBackPractice.setContentAreaFilled(false);
+        butNoBackPractice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNoBackPractice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNoBackPractice.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_NOp.png"))); // NOI18N
+        butNoBackPractice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNoBackPracticeActionPerformed(evt);
+            }
+        });
+        BACKpractice.add(butNoBackPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, -1, -1));
+
+        butYesBackPractice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SI.png"))); // NOI18N
+        butYesBackPractice.setBorder(null);
+        butYesBackPractice.setBorderPainted(false);
+        butYesBackPractice.setContentAreaFilled(false);
+        butYesBackPractice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butYesBackPractice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butYesBackPractice.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_SIp.png"))); // NOI18N
+        butYesBackPractice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butYesBackPracticeActionPerformed(evt);
+            }
+        });
+        BACKpractice.add(butYesBackPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 310, -1, -1));
+
+        bgroundExit8.setBackground(new java.awt.Color(250, 250, 250, 0));
+        bgroundExit8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bgroundExit8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_PREGUNTAVOLER.png"))); // NOI18N
+        bgroundExit8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BACKpractice.add(bgroundExit8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
+        butNONE8.setBorder(null);
+        butNONE8.setBorderPainted(false);
+        butNONE8.setContentAreaFilled(false);
+        butNONE8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butNONE8.setEnabled(false);
+        butNONE8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butNONE8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butNONE8ActionPerformed(evt);
+            }
+        });
+        BACKpractice.add(butNONE8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 600));
+
+        PRACTICE.add(BACKpractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        butSummitTeamsP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_OK.png"))); // NOI18N
+        butSummitTeamsP.setBorder(null);
+        butSummitTeamsP.setBorderPainted(false);
+        butSummitTeamsP.setContentAreaFilled(false);
+        butSummitTeamsP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butSummitTeamsP.setEnabled(false);
+        butSummitTeamsP.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butSummitTeamsP.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_OKp.png"))); // NOI18N
+        butSummitTeamsP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butSummitTeamsPActionPerformed(evt);
+            }
+        });
+        PRACTICE.add(butSummitTeamsP, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 90, -1));
+
+        groupRounds.add(radRound6);
+        radRound6.setBorder(null);
+        radRound6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5.png"))); // NOI18N
+        radRound6.setIconTextGap(0);
+        radRound6.setOpaque(false);
+        radRound6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5.png"))); // NOI18N
+        radRound6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_5p.png"))); // NOI18N
+        radRound6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound6ActionPerformed(evt);
+            }
+        });
+        PRACTICE.add(radRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 92, 89));
+
+        groupRounds.add(radRound11);
+        radRound11.setBorder(null);
+        radRound11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10.png"))); // NOI18N
+        radRound11.setIconTextGap(0);
+        radRound11.setOpaque(false);
+        radRound11.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10.png"))); // NOI18N
+        radRound11.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_10p.png"))); // NOI18N
+        radRound11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound11ActionPerformed(evt);
+            }
+        });
+        PRACTICE.add(radRound11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 92, 89));
+
+        groupRounds.add(radRound16);
+        radRound16.setBorder(null);
+        radRound16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15.png"))); // NOI18N
+        radRound16.setIconTextGap(0);
+        radRound16.setOpaque(false);
+        radRound16.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15.png"))); // NOI18N
+        radRound16.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_15p.png"))); // NOI18N
+        radRound16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound16ActionPerformed(evt);
+            }
+        });
+        PRACTICE.add(radRound16, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 92, 89));
+
+        groupRounds.add(radRound21);
+        radRound21.setBorder(null);
+        radRound21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        radRound21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20.png"))); // NOI18N
+        radRound21.setIconTextGap(0);
+        radRound21.setOpaque(false);
+        radRound21.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20.png"))); // NOI18N
+        radRound21.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_20p.png"))); // NOI18N
+        radRound21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radRound21ActionPerformed(evt);
+            }
+        });
+        PRACTICE.add(radRound21, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 92, 89));
+
+        butBackCPractice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRAS.png"))); // NOI18N
+        butBackCPractice.setBorder(null);
+        butBackCPractice.setBorderPainted(false);
+        butBackCPractice.setContentAreaFilled(false);
+        butBackCPractice.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        butBackCPractice.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        butBackCPractice.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/c_ATRASp.png"))); // NOI18N
+        butBackCPractice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackCPracticeActionPerformed(evt);
+            }
+        });
+        PRACTICE.add(butBackCPractice, new org.netbeans.lib.awtextra.AbsoluteConstraints(893, 499, -1, -1));
+
+        bground7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bground7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/PRACTICE/6_FONDO.png"))); // NOI18N
+        bground7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PRACTICE.add(bground7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1024, 600));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1676,6 +1926,16 @@ public class CP_GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(INFO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PRACTICE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(P_END, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1710,6 +1970,16 @@ public class CP_GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(INFO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PRACTICE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(P_END, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         getAccessibleContext().setAccessibleName("index");
@@ -1731,9 +2001,11 @@ public class CP_GUI extends javax.swing.JFrame {
         HOME.setVisible(false);
     }//GEN-LAST:event_butPlayActionPerformed
 
-    private void butConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butConfigActionPerformed
+    private void butPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPracticeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_butConfigActionPerformed
+        PRACTICE.setVisible(true);
+        HOME.setVisible(false);
+    }//GEN-LAST:event_butPracticeActionPerformed
 
     private void butSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSalirActionPerformed
         EXIThome.setVisible(true);
@@ -1787,6 +2059,10 @@ public class CP_GUI extends javax.swing.JFrame {
         BACKlvl.setVisible(false);
         BACKtags.setVisible(false);
         BACKfinal.setVisible(false);
+        BACKpractice.setVisible(false);
+        
+        //PRACTICE
+        butSummitTeamsP.setEnabled(false);
         
         
         //PLAY
@@ -1833,7 +2109,8 @@ public class CP_GUI extends javax.swing.JFrame {
 
         level = 1;
         
-               
+        practice = false;
+        
         word = wordList.get(0).getNombre();
         picture = wordList.get(0).getURLImagen();
         
@@ -1944,19 +2221,46 @@ public class CP_GUI extends javax.swing.JFrame {
         
         textPicture.setEnabled(false);
         butEnter.setEnabled(false);
+        
+        if (practice != true){
+            butPointBG.setVisible(true);
+            butPointTeam1.setVisible(true);
+            butPointTeam2.setVisible(true);
+            butPointTeam3.setVisible(true);
+            labPointTeam1.setVisible(true);
+            labPointTeam2.setVisible(true);
+            labPointTeam3.setVisible(true);
+        }
+        else{
+            
+            roundCount++;
+        
+            if (roundCount > roundTotal){
+               //LLAMA VENTANA FINAL
+                PLAY.setVisible(false);
+                P_END.setVisible(true);
+                resetGame();
+            }
+            else{
 
-        butPointBG.setVisible(true);
-        butPointTeam1.setVisible(true);
-        butPointTeam2.setVisible(true);
-        butPointTeam3.setVisible(true);
-        labPointTeam1.setVisible(true);
-        labPointTeam2.setVisible(true);
-        labPointTeam3.setVisible(true);
+                labRoundCounter.setText(roundCount + "/" + roundTotal);
+                textPicture.setText("");
+
+                //DEFINE NUEVA IMAGEN Y PALABRA
+
+               word = wordList.get(roundCount - 1).getNombre();
+               picture = wordList.get(roundCount - 1).getURLImagen();
+
+                labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+            }
+        
+        }
     }//GEN-LAST:event_butGOODActionPerformed
 
     private void butBADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBADActionPerformed
         // TODO add your handling code here:
         butBAD.setVisible(false);
+        butEnter.setEnabled(false);
         resetTimerButton();
     }//GEN-LAST:event_butBADActionPerformed
 
@@ -1967,70 +2271,96 @@ public class CP_GUI extends javax.swing.JFrame {
         butNext.setVisible(false);
         butShowAnsw.setVisible(true);
         
-
         resetTimerButton();
 
         butEnter.setEnabled(false);
         textPicture.setEnabled(false);
         labText.setEnabled(false);
-
         
-        //DEFINE NUEVA IMAGEN Y PALABRA
-         roundCount++;
-        if (roundCount > roundTotal){
-           //LLAMA VENTANA FINAL
-            PLAY.setVisible(false);
-            FINAL.setVisible(true);
+        ////////////////////////
+        
+        if (practice != true){
             
-            labScoreT1.setText("" + team1Score);
-            labScoreT2.setText("" + team2Score);
-            labScoreT3.setText("" + team3Score);
-            
-            if (team1Score > team2Score){
-                if (team1Score > team3Score){
-                    labWinner.setText(textTeam1.getText().toUpperCase());
+            roundCount++;
+         
+            if (roundCount > roundTotal){
+               //LLAMA VENTANA FINAL
+                PLAY.setVisible(false);
+                FINAL.setVisible(true);
+
+                labScoreT1.setText("" + team1Score);
+                labScoreT2.setText("" + team2Score);
+                labScoreT3.setText("" + team3Score);
+
+                if (team1Score > team2Score){
+                    if (team1Score > team3Score){
+                        labWinner.setText(textTeam1.getText().toUpperCase());
+                    }
+                    else if (team1Score < team3Score){
+                        labWinner.setText(textTeam3.getText().toUpperCase());
+                    }
+                    else if (team1Score == team3Score){
+                        labWinner.setText("EMPATE");
+                    }
                 }
-                else if (team1Score < team3Score){
-                    labWinner.setText(textTeam3.getText().toUpperCase());
+                else if (team1Score < team2Score){
+                    if (team2Score > team3Score){
+                        labWinner.setText(textTeam2.getText().toUpperCase());
+                    }
+                    else if (team2Score < team3Score){
+                        labWinner.setText(textTeam3.getText().toUpperCase());
+                    }
+                    else if (team2Score == team3Score){
+                        labWinner.setText("EMPATE");
+                    }
                 }
-                else if (team1Score == team3Score){
-                    labWinner.setText("EMPATE");
+                else if (team1Score == team2Score){
+                    if (team2Score < team3Score){
+                        labWinner.setText(textTeam3.getText().toUpperCase());
+                    }
+                    else labWinner.setText("EMPATE");
                 }
+                else labWinner.setText("ERROR");
+
+               //resetGame();
             }
-            else if (team1Score < team2Score){
-                if (team2Score > team3Score){
-                    labWinner.setText(textTeam2.getText().toUpperCase());
-                }
-                else if (team2Score < team3Score){
-                    labWinner.setText(textTeam3.getText().toUpperCase());
-                }
-                else if (team2Score == team3Score){
-                    labWinner.setText("EMPATE");
-                }
-            }
-            else if (team1Score == team2Score){
-                if (team2Score < team3Score){
-                    labWinner.setText(textTeam3.getText().toUpperCase());
-                }
-                else labWinner.setText("EMPATE");
-            }
-            else labWinner.setText("ERROR");
-            
-            
-            
-           //resetGame();
+            else{
+                labRoundCounter.setText(roundCount + "/" + roundTotal);
+                textPicture.setText("");
+
+                //DEFINE NUEVA IMAGEN Y PALABRA
+
+               word = wordList.get(roundCount - 1).getNombre();
+               picture = wordList.get(roundCount - 1).getURLImagen();
+
+                labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+            } 
         }
         else{
-            labRoundCounter.setText(roundCount + "/" + roundTotal);
-            textPicture.setText("");
             
-            //DEFINE NUEVA IMAGEN Y PALABRA
-            
-           word = wordList.get(roundCount - 1).getNombre();
-           picture = wordList.get(roundCount - 1).getURLImagen();
+            roundCount++;
+        
+            if (roundCount > roundTotal){
+               //LLAMA VENTANA FINAL
+                PLAY.setVisible(false);
+                P_END.setVisible(true);
+                resetGame();
+            }
+            else{
 
-            labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
-        } 
+                labRoundCounter.setText(roundCount + "/" + roundTotal);
+                textPicture.setText("");
+
+                //DEFINE NUEVA IMAGEN Y PALABRA
+
+               word = wordList.get(roundCount - 1).getNombre();
+               picture = wordList.get(roundCount - 1).getURLImagen();
+
+                labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+            }
+        
+        }
+        
     }//GEN-LAST:event_butNextActionPerformed
 
     private void butYesExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesExitActionPerformed
@@ -2551,6 +2881,95 @@ public class CP_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textTeam1ActionPerformed
 
+    private void butNoBackPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackPracticeActionPerformed
+        // TODO add your handling code here:
+        BACKpractice.setVisible(false);
+    }//GEN-LAST:event_butNoBackPracticeActionPerformed
+
+    private void butYesBackPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackPracticeActionPerformed
+        // TODO add your handling code here:
+        BACKpractice.setVisible(false);
+        PRACTICE.setVisible(false);
+        HOME.setVisible(true);
+        
+        resetGame();
+    }//GEN-LAST:event_butYesBackPracticeActionPerformed
+
+    private void butNONE8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE8ActionPerformed
+
+    private void butBackCPracticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCPracticeActionPerformed
+        // TODO add your handling code here:
+        BACKpractice.setVisible(true);
+        
+    }//GEN-LAST:event_butBackCPracticeActionPerformed
+
+    private void radRound6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound6ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 5;
+        butSummitTeamsP.setEnabled(true);
+    }//GEN-LAST:event_radRound6ActionPerformed
+
+    private void radRound11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound11ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 10;
+        butSummitTeamsP.setEnabled(true);
+    }//GEN-LAST:event_radRound11ActionPerformed
+
+    private void radRound16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound16ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 15;
+        butSummitTeamsP.setEnabled(true);
+    }//GEN-LAST:event_radRound16ActionPerformed
+
+    private void radRound21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radRound21ActionPerformed
+        // TODO add your handling code here:
+        roundTotal = 20;
+        butSummitTeamsP.setEnabled(true);
+    }//GEN-LAST:event_radRound21ActionPerformed
+
+    private void butSummitTeamsPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTeamsPActionPerformed
+        // TODO add your handling code here:
+        PRACTICE.setVisible(false);
+        LVL.setVisible(true);
+        
+        practice = true;
+        
+            labPointTeam1.setText(textTeam1.getText().toUpperCase());
+            labPointTeam2.setText(textTeam2.getText().toUpperCase());
+            labPointTeam3.setText(textTeam3.getText().toUpperCase());
+            labT1.setText(textTeam1.getText().toUpperCase());
+            labT2.setText(textTeam2.getText().toUpperCase());
+            labT3.setText(textTeam3.getText().toUpperCase());
+                
+        //ESCRIBE NUMERO DE RONDAS 
+        labRoundCounter.setText(roundCount + "/" + roundTotal);
+    }//GEN-LAST:event_butSummitTeamsPActionPerformed
+
+    private void butNoBackPEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNoBackPEndActionPerformed
+        // TODO add your handling code here:
+        BACKPEnd.setVisible(false);
+    }//GEN-LAST:event_butNoBackPEndActionPerformed
+
+    private void butYesBackPEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butYesBackPEndActionPerformed
+        // TODO add your handling code here:
+        BACKPEnd.setVisible(false);
+        HOME.setVisible(true);
+        P_END.setVisible(false);
+        
+        resetGame();
+    }//GEN-LAST:event_butYesBackPEndActionPerformed
+
+    private void butNONE9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butNONE9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butNONE9ActionPerformed
+
+    private void butBackCPEndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackCPEndActionPerformed
+        // TODO add your handling code here:
+        BACKPEnd.setVisible(true);
+    }//GEN-LAST:event_butBackCPEndActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2588,10 +3007,12 @@ public class CP_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BACKPEnd;
     private javax.swing.JPanel BACKfinal;
     private javax.swing.JPanel BACKinfo;
     private javax.swing.JPanel BACKlvl;
     private javax.swing.JPanel BACKplay;
+    private javax.swing.JPanel BACKpractice;
     private javax.swing.JPanel BACKtags;
     private javax.swing.JPanel BACKteams;
     private javax.swing.JPanel EXIThome;
@@ -2601,6 +3022,8 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel INFO;
     private javax.swing.JPanel LVL;
     private javax.swing.JPanel PLAY;
+    private javax.swing.JPanel PRACTICE;
+    private javax.swing.JPanel P_END;
     private javax.swing.JPanel TAGS;
     private javax.swing.JPanel TEAMS;
     private javax.swing.JLabel bground;
@@ -2610,6 +3033,8 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel bground4;
     private javax.swing.JLabel bground5;
     private javax.swing.JLabel bground6;
+    private javax.swing.JLabel bground7;
+    private javax.swing.JLabel bground8;
     private javax.swing.JLabel bgroundExit;
     private javax.swing.JLabel bgroundExit1;
     private javax.swing.JLabel bgroundExit2;
@@ -2618,14 +3043,17 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel bgroundExit5;
     private javax.swing.JLabel bgroundExit6;
     private javax.swing.JLabel bgroundExit7;
+    private javax.swing.JLabel bgroundExit8;
+    private javax.swing.JLabel bgroundExit9;
     private javax.swing.JButton butBAD;
     private javax.swing.JButton butBackC;
     private javax.swing.JButton butBackCFinal;
     private javax.swing.JButton butBackCInfo;
     private javax.swing.JButton butBackCLvl;
+    private javax.swing.JButton butBackCPEnd;
+    private javax.swing.JButton butBackCPractice;
     private javax.swing.JButton butBackCTags;
     private javax.swing.JButton butBackCTeams;
-    private javax.swing.JButton butConfig;
     private javax.swing.JButton butEnter;
     private javax.swing.JButton butExitC;
     private javax.swing.JButton butGOOD;
@@ -2646,11 +3074,15 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JButton butNONE5;
     private javax.swing.JButton butNONE6;
     private javax.swing.JButton butNONE7;
+    private javax.swing.JButton butNONE8;
+    private javax.swing.JButton butNONE9;
     private javax.swing.JButton butNext;
     private javax.swing.JButton butNoBack;
     private javax.swing.JButton butNoBackFinal;
     private javax.swing.JButton butNoBackInfo;
     private javax.swing.JButton butNoBackLvl;
+    private javax.swing.JButton butNoBackPEnd;
+    private javax.swing.JButton butNoBackPractice;
     private javax.swing.JButton butNoBackTags;
     private javax.swing.JButton butNoBackTeams;
     private javax.swing.JButton butNoExit;
@@ -2660,16 +3092,20 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JButton butPointTeam1;
     private javax.swing.JButton butPointTeam2;
     private javax.swing.JButton butPointTeam3;
+    private javax.swing.JButton butPractice;
     private javax.swing.JButton butResetTime;
     private javax.swing.JButton butSalir;
     private javax.swing.JButton butShowAnsw;
     private javax.swing.JButton butStartTime;
     private javax.swing.JButton butSummitTags;
     private javax.swing.JButton butSummitTeams;
+    private javax.swing.JButton butSummitTeamsP;
     private javax.swing.JButton butYesBack;
     private javax.swing.JButton butYesBackFinal;
     private javax.swing.JButton butYesBackInfo;
     private javax.swing.JButton butYesBackLvl;
+    private javax.swing.JButton butYesBackPEnd;
+    private javax.swing.JButton butYesBackPractice;
     private javax.swing.JButton butYesBackTags;
     private javax.swing.JButton butYesBackTeams;
     private javax.swing.JButton butYesExit;
@@ -2706,9 +3142,13 @@ public class CP_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel labTimeCounter;
     private javax.swing.JLabel labWinner;
     private javax.swing.JRadioButton radRound10;
+    private javax.swing.JRadioButton radRound11;
     private javax.swing.JRadioButton radRound15;
+    private javax.swing.JRadioButton radRound16;
     private javax.swing.JRadioButton radRound20;
+    private javax.swing.JRadioButton radRound21;
     private javax.swing.JRadioButton radRound5;
+    private javax.swing.JRadioButton radRound6;
     private javax.swing.JRadioButton radTeam2;
     private javax.swing.JRadioButton radTeam3;
     private javax.swing.JScrollPane scrollWordsT1;
