@@ -122,7 +122,7 @@ public class AppManager {
         //String query = "select * from Palabras where ? and ?";
 
         this.palabras.clear();
-        String query = "select * from Palabras";
+        String query = "select * from Palabras where categoriaId = 17";
         
         try{
             pst = conn.prepareStatement(query);
@@ -132,11 +132,11 @@ public class AppManager {
             rs = pst.executeQuery();
 
             while(rs.next()){
-                String p = rs.getString(2);
-                String u = rs.getString(3);
+                String p = rs.getString(1);
+                String u = rs.getString(2);
                 
                 this.palabras.add(new Palabra(p, u));
-                System.out.println(p);
+                System.out.println(p + " " + u);
             }
             
         }catch(Exception e){
