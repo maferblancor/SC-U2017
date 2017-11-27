@@ -134,7 +134,7 @@ public class AppManager {
             while(rs.next()){
                 String p = rs.getString(1);
                 String u = rs.getString(2);
-                
+
                 this.palabras.add(new Palabra(p, u));
                 System.out.println(p + " " + u);
             }
