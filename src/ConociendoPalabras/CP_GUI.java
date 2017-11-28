@@ -2724,6 +2724,8 @@ public class CP_GUI extends javax.swing.JFrame {
         AppManager.instance.getCategoriasBD(-1);
         tagsAvailable = AppManager.instance.getCategorias();
         
+        setTags();
+        
         LVL.setVisible(false);
         TAGS.setVisible(true);
     }//GEN-LAST:event_butLvlMatActionPerformed
@@ -2734,6 +2736,8 @@ public class CP_GUI extends javax.swing.JFrame {
         
         AppManager.instance.getCategoriasBD(0);
         tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
         
         LVL.setVisible(false);
         TAGS.setVisible(true);
@@ -2759,6 +2763,8 @@ public class CP_GUI extends javax.swing.JFrame {
         AppManager.instance.getCategoriasBD(2);
         tagsAvailable = AppManager.instance.getCategorias();
         
+        setTags();
+        
         LVL.setVisible(false);
         TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl2ActionPerformed
@@ -2769,6 +2775,8 @@ public class CP_GUI extends javax.swing.JFrame {
         
         AppManager.instance.getCategoriasBD(3);
         tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
         
         LVL.setVisible(false);
         TAGS.setVisible(true);
@@ -2781,6 +2789,8 @@ public class CP_GUI extends javax.swing.JFrame {
         AppManager.instance.getCategoriasBD(4);
         tagsAvailable = AppManager.instance.getCategorias();
         
+        setTags();
+        
         LVL.setVisible(false);
         TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl4ActionPerformed
@@ -2792,6 +2802,8 @@ public class CP_GUI extends javax.swing.JFrame {
         AppManager.instance.getCategoriasBD(5);
         tagsAvailable = AppManager.instance.getCategorias();
         
+        setTags();
+        
         LVL.setVisible(false);
         TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl5ActionPerformed
@@ -2802,6 +2814,8 @@ public class CP_GUI extends javax.swing.JFrame {
         
         AppManager.instance.getCategoriasBD(6);
         tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
         
         LVL.setVisible(false);
         TAGS.setVisible(true);
