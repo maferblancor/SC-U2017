@@ -8,9 +8,6 @@ package ConociendoPalabras;
 
 
 import java.sql.*;
-import javax.sql.*;
-import javax.swing.*;
-import org.sqlite.*;
 import java.io.File;
 
 

@@ -22,7 +22,7 @@ public class AppManager {
     private String categoria;
     
     private List<Palabra> palabras;
-    private List<String> categorias;
+    private List<Categoria> categorias;
     
     private int xRondas;
     
@@ -49,7 +49,7 @@ public class AppManager {
         return this.palabras;
     }
     
-    public List<String> getCategorias(){
+    public List<Categoria> getCategorias(){
         return this.categorias;
     }
     
@@ -127,7 +127,7 @@ public class AppManager {
         //String query = "select * from Palabras where ? and ?";
 
         this.categorias.clear();
-        String query = "SELECT DISTINCT Categorias.nombre FROM Categorias INNER JOIN"+
+        String query = "SELECT DISTINCT Categorias.* FROM Categorias INNER JOIN"+
                 " CategoriasNivel ON Categorias.id = CategoriasNivel.categoria "+
                 "INNER JOIN Niveles ON CategoriasNivel.nivel = Niveles.id Where"+
                 " grado = ?";
@@ -141,9 +141,10 @@ public class AppManager {
             rs = pst.executeQuery();
 
             while(rs.next()){
-                String p = rs.getString(1);
+                int p = rs.getInt(1);
+                String s = rs.getString(2);
 
-                this.categorias.add(p);
+                this.categorias.add(new Categoria(p, s));
             }
             
             rs.close();
@@ -161,10 +162,11 @@ public class AppManager {
         //String query = "select * from Palabras where ? and ?";
 
         this.palabras.clear();
-        String query = "SELECT DISTINCT Palabras.nombre, Palabras.imagen FROM" +
-                " Palabras INNER JOIN PalabrasNivel.palabra INNER JOIN Niveles "+
-                "ON PalabrasNivel.nivel = Niveles.id WHERE grado = ? AND "+
-                "categoriaId = ? ORDER BY RANDOM() LIMIT ?";
+        
+        String query = "SELECT DISTINCT Palabras.nombre, Palabras.imagen FROM "+
+                "Palabras INNER JOIN PalabrasNivel ON Palabras.nombre = "+
+                "PalabrasNivel.palabra INNER JOIN Niveles ON PalabrasNivel.nivel"+
+                " = Niveles.id WHERE grado = ? AND categoriaId = ? ORDER BY RANDOM() LIMIT ?";
         
         try{
             pst = conn.prepareStatement(query);
