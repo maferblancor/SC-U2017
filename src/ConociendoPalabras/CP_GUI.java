@@ -30,6 +30,7 @@ public class CP_GUI extends javax.swing.JFrame {
     boolean practice = false;
     
     List<Palabra> wordList; 
+    private List<String> categoriesAvailable;
     
     Temporizador temporizador;
     
@@ -54,6 +55,7 @@ public class CP_GUI extends javax.swing.JFrame {
             }
         }
     };
+    private int categorie;
     
     private void resetTimerButton(){
         
@@ -80,7 +82,7 @@ public class CP_GUI extends javax.swing.JFrame {
         initComponents();
         
         AppManager.setInstance();
-        AppManager.instance.getPalabrasBD();
+        //AppManager.instance.getPalabrasBD(); OJO TIENE QUE HACERSE DESPUES DE CONOCER EL NIVEL, CATEGORIAS Y CANTIDAD DE RONDAS
         
         //Temporizador
         /*
@@ -97,12 +99,12 @@ public class CP_GUI extends javax.swing.JFrame {
         */
         temporizador = new Temporizador(5,1000, descontarSegundo);
         
-        wordList = AppManager.instance.getPalabras();
-        word = wordList.get(0).getNombre();
-        picture = wordList.get(0).getURLImagen();
+        //wordList = AppManager.instance.getPalabras();
+        //word = wordList.get(0).getNombre();
+        //picture = wordList.get(0).getURLImagen();
         
         //INICIO COMPONENTES
-        labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        //labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
         
         PLAY.setVisible(false);
             labTimeCounter.setVisible(false);
@@ -2590,6 +2592,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvlMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvlMatActionPerformed
         // TODO add your handling code here:
         level = -1;
+        
+        AppManager.instance.getCategoriasBD(-1);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvlMatActionPerformed
@@ -2597,6 +2603,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvlPreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvlPreActionPerformed
         // TODO add your handling code here:
         level = 0;
+        
+        AppManager.instance.getCategoriasBD(0);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvlPreActionPerformed
@@ -2604,6 +2614,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl1ActionPerformed
         // TODO add your handling code here:
         level = 1;
+        
+        AppManager.instance.getCategoriasBD(1);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl1ActionPerformed
@@ -2611,6 +2625,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl2ActionPerformed
         // TODO add your handling code here:
         level = 2;
+        
+        AppManager.instance.getCategoriasBD(2);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvl2ActionPerformed
@@ -2618,6 +2636,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl3ActionPerformed
         // TODO add your handling code here:
         level = 3;
+        
+        AppManager.instance.getCategoriasBD(3);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvl3ActionPerformed
@@ -2625,6 +2647,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl4ActionPerformed
         // TODO add your handling code here:
         level = 4;
+        
+        AppManager.instance.getCategoriasBD(4);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvl4ActionPerformed
@@ -2632,6 +2658,10 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl5ActionPerformed
         // TODO add your handling code here:
         level = 5;
+        
+        AppManager.instance.getCategoriasBD(5);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvl5ActionPerformed
@@ -2639,12 +2669,29 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl6ActionPerformed
         // TODO add your handling code here:
         level = 6;
+        
+        AppManager.instance.getCategoriasBD(6);
+        categoriesAvailable = AppManager.instance.getCategorias();
+        
         LVL.setVisible(false);
         PLAY.setVisible(true);
     }//GEN-LAST:event_butLvl6ActionPerformed
 
     private void butSummitTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTagsActionPerformed
         // TODO add your handling code here:
+        
+        //Aqui se pide la lista de palabras
+        
+        //OJOOOOOO FALTA COMO OBTENER LA CATEGORIA QUE SE SELECCIONO
+        //GUARDAR ESA INFORMACION EN this.categorie o categorie
+        
+        AppManager.instance.getPalabrasBD(level, categorie, roundTotal);
+        wordList = AppManager.instance.getPalabras();
+        
+        word = wordList.get(0).getNombre();
+        picture = wordList.get(0).getURLImagen();
+        labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        
     }//GEN-LAST:event_butSummitTagsActionPerformed
 
     private void butPointBGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPointBGActionPerformed

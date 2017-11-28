@@ -1,10 +1,8 @@
 package ConociendoPalabras;
 
 
-import java.lang.String;
 import java.util.*;
 import java.sql.*;
-import javax.sql.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,6 +22,7 @@ public class AppManager {
     private String categoria;
     
     private List<Palabra> palabras;
+    private List<String> categorias;
     
     private int xRondas;
     
@@ -39,6 +38,7 @@ public class AppManager {
         this.nivel = EnumNivel.NINGUNO;
         
         this.palabras = new ArrayList();
+        this.categorias = new ArrayList();
         
         this.xRondas = 5;
         
@@ -47,6 +47,10 @@ public class AppManager {
 
     public List<Palabra> getPalabras(){
         return this.palabras;
+    }
+    
+    public List<String> getCategorias(){
+        return this.categorias;
     }
     
     public static AppManager getInstance() {
@@ -115,19 +119,60 @@ public class AppManager {
     }
     
     //PRE-JUEGO
-    public void getPalabrasBD(){
+    
+    public void getCategoriasBD(int nivel){
+    
+        //Aqui deberia agregarse el DONDE las palabras sean de 
+        //nivel TAL y categoria TAL
+        //String query = "select * from Palabras where ? and ?";
+
+        this.categorias.clear();
+        String query = "SELECT DISTINCT Categorias.nombre FROM Categorias INNER JOIN"+
+                " CategoriasNivel ON Categorias.id = CategoriasNivel.categoria "+
+                "INNER JOIN Niveles ON CategoriasNivel.nivel = Niveles.id Where"+
+                " grado = ?";
+        
+        try{
+            pst = conn.prepareStatement(query);
+            //Para agregar los parametros '?'
+            //pst.setInt(1, xRondas);
+            pst.setInt(1, nivel);
+            
+            rs = pst.executeQuery();
+
+            while(rs.next()){
+                String p = rs.getString(1);
+
+                this.categorias.add(p);
+            }
+            
+            rs.close();
+            pst.close();
+            
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+    
+    public void getPalabrasBD(int nivel, int categoria, int rondas){
     
         //Aqui deberia agregarse el DONDE las palabras sean de 
         //nivel TAL y categoria TAL
         //String query = "select * from Palabras where ? and ?";
 
         this.palabras.clear();
-        String query = "select * from Palabras where categoriaId = 17";
+        String query = "SELECT DISTINCT Palabras.nombre, Palabras.imagen FROM" +
+                " Palabras INNER JOIN PalabrasNivel.palabra INNER JOIN Niveles "+
+                "ON PalabrasNivel.nivel = Niveles.id WHERE grado = ? AND "+
+                "categoriaId = ? ORDER BY RANDOM() LIMIT ?";
         
         try{
             pst = conn.prepareStatement(query);
             //Para agregar los parametros '?'
             //pst.setInt(1, xRondas);
+            pst.setInt(1, nivel);
+            pst.setInt(2, categoria);
+            pst.setInt(3, rondas);
             
             rs = pst.executeQuery();
 
@@ -139,12 +184,13 @@ public class AppManager {
                 System.out.println(p + " " + u);
             }
             
-        }catch(Exception e){
+            rs.close();
+            pst.close();
+            
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-    
-    //aqui seria acomodar la lista de palabras aleatoriamente de manera que tenga la misma cantidad de xRondas
     
     //JUEGO
     
