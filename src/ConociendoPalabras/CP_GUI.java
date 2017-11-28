@@ -30,6 +30,7 @@ public class CP_GUI extends javax.swing.JFrame {
     boolean practice = false;
     
     List<Palabra> wordList; 
+    List<Categoria> tagsAvailable;
     
     Temporizador temporizador;
     
@@ -54,6 +55,90 @@ public class CP_GUI extends javax.swing.JFrame {
             }
         }
     };
+    
+    private List<Categoria> getTags(){
+        List<Categoria> tagsChecked = new ArrayList();
+        
+        for (Categoria c : tagsAvailable) {
+            if (c.checked) {
+                tagsChecked.add(c);
+            }
+        }
+       
+        return tagsChecked;
+    }
+    
+    private void setTags() {
+        try{
+            checkTag1.setEnabled(true);
+            checkTag1.setText(tagsAvailable.get(0).getNombre());
+        }catch(Exception e){
+            checkTag1.setEnabled(false);
+        }
+        
+        try{
+            checkTag2.setEnabled(true);
+            checkTag2.setText(tagsAvailable.get(1).getNombre());
+        }catch(Exception e){
+            checkTag2.setEnabled(false);
+        }
+        
+        try{
+            checkTag3.setEnabled(true);
+            checkTag3.setText(tagsAvailable.get(2).getNombre());
+        }catch(Exception e){
+            checkTag3.setEnabled(false);
+        }
+        
+        try{
+            checkTag4.setEnabled(true);
+            checkTag4.setText(tagsAvailable.get(3).getNombre());
+        }catch(Exception e){
+            checkTag4.setEnabled(false);
+        }
+        
+        try{
+            checkTag5.setEnabled(true);
+            checkTag5.setText(tagsAvailable.get(4).getNombre());
+        }catch(Exception e){
+            checkTag5.setEnabled(false);
+        }
+        
+        try{
+            checkTag6.setEnabled(true);
+            checkTag6.setText(tagsAvailable.get(5).getNombre());
+        }catch(Exception e){
+            checkTag6.setEnabled(false);
+        }
+        
+        try{
+            checkTag7.setEnabled(true);
+            checkTag7.setText(tagsAvailable.get(6).getNombre());
+        }catch(Exception e){
+            checkTag7.setEnabled(false);
+        }
+        
+        try{
+            checkTag8.setEnabled(true);
+            checkTag8.setText(tagsAvailable.get(7).getNombre());
+        }catch(Exception e){
+            checkTag8.setEnabled(false);
+        }
+        
+        try{
+            checkTag9.setEnabled(true);
+            checkTag9.setText(tagsAvailable.get(8).getNombre());
+        }catch(Exception e){
+            checkTag9.setEnabled(false);
+        }
+        
+        try{
+            checkTag10.setEnabled(true);
+            checkTag10.setText(tagsAvailable.get(9).getNombre());
+        }catch(Exception e){
+            checkTag10.setEnabled(false);
+        }                
+    }
     
     private void resetTimerButton(){
         
@@ -80,7 +165,7 @@ public class CP_GUI extends javax.swing.JFrame {
         initComponents();
         
         AppManager.setInstance();
-        AppManager.instance.getPalabrasBD();
+        //AppManager.instance.getPalabrasBD(); OJO TIENE QUE HACERSE DESPUES DE CONOCER EL NIVEL, CATEGORIAS Y CANTIDAD DE RONDAS
         
         //Temporizador
         /*
@@ -97,12 +182,12 @@ public class CP_GUI extends javax.swing.JFrame {
         */
         temporizador = new Temporizador(5,1000, descontarSegundo);
         
-        wordList = AppManager.instance.getPalabras();
-        word = wordList.get(0).getNombre();
-        picture = wordList.get(0).getURLImagen();
+        //wordList = AppManager.instance.getPalabras();
+        //word = wordList.get(0).getNombre();
+        //picture = wordList.get(0).getURLImagen();
         
         //INICIO COMPONENTES
-        labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        //labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
         
         PLAY.setVisible(false);
             labTimeCounter.setVisible(false);
@@ -912,6 +997,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag6ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 200, 60));
 
         checkTag7.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -924,6 +1014,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag7.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag7.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag7ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 200, 60));
 
         checkTag8.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -936,6 +1031,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag8.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag8.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag8.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag8ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 200, 60));
 
         checkTag9.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -948,6 +1048,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag9.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag9.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag9.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag9ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 400, 200, 60));
 
         checkTag10.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -960,6 +1065,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag10.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag10.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag10.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag10ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, 200, 60));
 
         checkTag5.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -972,6 +1082,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag5ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 200, 60));
 
         checkTag4.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -984,6 +1099,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag4ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 200, 60));
 
         checkTag3.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -996,6 +1116,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag3ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 200, 60));
 
         checkTag2.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -1008,6 +1133,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag2ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 200, 60));
 
         checkTag1.setFont(new java.awt.Font("Maiandra GD", 1, 22)); // NOI18N
@@ -1020,6 +1150,11 @@ public class CP_GUI extends javax.swing.JFrame {
         checkTag1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_UNCHECKBOX.png"))); // NOI18N
         checkTag1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
         checkTag1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TAGS/3_CHECKBOX.png"))); // NOI18N
+        checkTag1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkTag1ActionPerformed(evt);
+            }
+        });
         TAGS.add(checkTag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 200, 60));
 
         butSummitTags.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gui/TEAMS/1-2_OK.png"))); // NOI18N
@@ -1514,7 +1649,7 @@ public class CP_GUI extends javax.swing.JFrame {
         textWordsT1.setForeground(new java.awt.Color(41, 181, 184));
         textWordsT1.setRows(5);
         textWordsT1.setText("\n");
-        textWordsT1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(250, 250, 250, 0))); // NOI18N
+        textWordsT1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(250, 250, 250, 0))); // NOI18N
         textWordsT1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         textWordsT1.setDisabledTextColor(new java.awt.Color(41, 181, 184));
         textWordsT1.setEnabled(false);
@@ -1537,7 +1672,7 @@ public class CP_GUI extends javax.swing.JFrame {
         textWordsT3.setForeground(new java.awt.Color(41, 181, 184));
         textWordsT3.setRows(5);
         textWordsT3.setText("\n");
-        textWordsT3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(250, 250, 250, 0))); // NOI18N
+        textWordsT3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(250, 250, 250, 0))); // NOI18N
         textWordsT3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         textWordsT3.setDisabledTextColor(new java.awt.Color(41, 181, 184));
         textWordsT3.setEnabled(false);
@@ -1560,7 +1695,7 @@ public class CP_GUI extends javax.swing.JFrame {
         textWordsT2.setForeground(new java.awt.Color(41, 181, 184));
         textWordsT2.setRows(5);
         textWordsT2.setText("\n");
-        textWordsT2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(250, 250, 250, 0))); // NOI18N
+        textWordsT2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(250, 250, 250, 0))); // NOI18N
         textWordsT2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         textWordsT2.setDisabledTextColor(new java.awt.Color(41, 181, 184));
         textWordsT2.setEnabled(false);
@@ -2111,11 +2246,6 @@ public class CP_GUI extends javax.swing.JFrame {
         
         practice = false;
         
-        word = wordList.get(0).getNombre();
-        picture = wordList.get(0).getURLImagen();
-        
-        labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
-        
         //REINICIO DE TEMPORIZADOR        
         
         temporizador.stop();
@@ -2590,20 +2720,38 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvlMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvlMatActionPerformed
         // TODO add your handling code here:
         level = -1;
+        
+        AppManager.instance.getCategoriasBD(-1);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvlMatActionPerformed
 
     private void butLvlPreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvlPreActionPerformed
         // TODO add your handling code here:
         level = 0;
+        
+        AppManager.instance.getCategoriasBD(0);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvlPreActionPerformed
 
     private void butLvl1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl1ActionPerformed
         // TODO add your handling code here:
         level = 1;
+        
+        AppManager.instance.getCategoriasBD(1);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
         TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl1ActionPerformed
@@ -2611,40 +2759,103 @@ public class CP_GUI extends javax.swing.JFrame {
     private void butLvl2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl2ActionPerformed
         // TODO add your handling code here:
         level = 2;
+        
+        AppManager.instance.getCategoriasBD(2);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl2ActionPerformed
 
     private void butLvl3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl3ActionPerformed
         // TODO add your handling code here:
         level = 3;
+        
+        AppManager.instance.getCategoriasBD(3);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl3ActionPerformed
 
     private void butLvl4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl4ActionPerformed
         // TODO add your handling code here:
         level = 4;
+        
+        AppManager.instance.getCategoriasBD(4);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl4ActionPerformed
 
     private void butLvl5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl5ActionPerformed
         // TODO add your handling code here:
         level = 5;
+        
+        AppManager.instance.getCategoriasBD(5);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl5ActionPerformed
 
     private void butLvl6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLvl6ActionPerformed
         // TODO add your handling code here:
         level = 6;
+        
+        AppManager.instance.getCategoriasBD(6);
+        tagsAvailable = AppManager.instance.getCategorias();
+        
+        setTags();
+        
         LVL.setVisible(false);
-        PLAY.setVisible(true);
+        TAGS.setVisible(true);
     }//GEN-LAST:event_butLvl6ActionPerformed
 
     private void butSummitTagsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butSummitTagsActionPerformed
         // TODO add your handling code here:
+        
+        //Aqui se pide la lista de palabras
+        
+        //OJOOOOOO FALTA COMO OBTENER LA CATEGORIA QUE SE SELECCIONO
+        //GUARDAR ESA INFORMACION EN this.categorie o categorie
+        
+        List<Categoria> l = getTags();
+        
+        if (l.size() == 0) {
+            return;
+        }
+        
+        //wordList.clear();
+        if (wordList == null) {
+            wordList = new ArrayList();
+        }else{
+            wordList.clear();
+        }
+        
+        for (Categoria c : l) {
+            AppManager.instance.getPalabrasBD(level, c.getID(), roundTotal);
+            wordList.addAll(AppManager.instance.getPalabras());
+        }
+        
+        Collections.shuffle(wordList);
+        
+        word = wordList.get(0).getNombre();
+        picture = wordList.get(0).getURLImagen();
+        labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
+        
+        
+        TAGS.setVisible(false);
+        PLAY.setVisible(true);
     }//GEN-LAST:event_butSummitTagsActionPerformed
 
     private void butPointBGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPointBGActionPerformed
@@ -2969,6 +3180,56 @@ public class CP_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         BACKPEnd.setVisible(true);
     }//GEN-LAST:event_butBackCPEndActionPerformed
+
+    private void checkTag1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag1ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(0).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag1ActionPerformed
+
+    private void checkTag2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag2ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(1).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag2ActionPerformed
+
+    private void checkTag3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag3ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(2).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag3ActionPerformed
+
+    private void checkTag4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag4ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(3).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag4ActionPerformed
+
+    private void checkTag5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag5ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(4).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag5ActionPerformed
+
+    private void checkTag6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag6ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(5).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag6ActionPerformed
+
+    private void checkTag7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag7ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(6).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag7ActionPerformed
+
+    private void checkTag8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag8ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(7).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag8ActionPerformed
+
+    private void checkTag9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag9ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(8).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag9ActionPerformed
+
+    private void checkTag10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag10ActionPerformed
+        // TODO add your handling code here:
+        tagsAvailable.get(9).checked = checkTag1.isSelected();
+    }//GEN-LAST:event_checkTag10ActionPerformed
 
     /**
      * @param args the command line arguments
