@@ -27,7 +27,7 @@ public class BDmanager {
            // JOptionPane.showMessageDialog(null, "Database connected");
             return conn;
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Database not connected");
+            //JOptionPane.showMessageDialog(null, "Database not connected");
             return null;
         }
     }

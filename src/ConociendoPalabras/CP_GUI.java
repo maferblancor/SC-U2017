@@ -2853,6 +2853,9 @@ public class CP_GUI extends javax.swing.JFrame {
         picture = wordList.get(0).getURLImagen();
         labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
         
+        if (roundTotal > wordList.size()) {
+            roundTotal = wordList.size();
+        }
         
         TAGS.setVisible(false);
         PLAY.setVisible(true);
@@ -3188,47 +3191,47 @@ public class CP_GUI extends javax.swing.JFrame {
 
     private void checkTag2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag2ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(1).checked = checkTag1.isSelected();
+        tagsAvailable.get(1).checked = checkTag2.isSelected();
     }//GEN-LAST:event_checkTag2ActionPerformed
 
     private void checkTag3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag3ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(2).checked = checkTag1.isSelected();
+        tagsAvailable.get(2).checked = checkTag3.isSelected();
     }//GEN-LAST:event_checkTag3ActionPerformed
 
     private void checkTag4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag4ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(3).checked = checkTag1.isSelected();
+        tagsAvailable.get(3).checked = checkTag4.isSelected();
     }//GEN-LAST:event_checkTag4ActionPerformed
 
     private void checkTag5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag5ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(4).checked = checkTag1.isSelected();
+        tagsAvailable.get(4).checked = checkTag5.isSelected();
     }//GEN-LAST:event_checkTag5ActionPerformed
 
     private void checkTag6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag6ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(5).checked = checkTag1.isSelected();
+        tagsAvailable.get(5).checked = checkTag6.isSelected();
     }//GEN-LAST:event_checkTag6ActionPerformed
 
     private void checkTag7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag7ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(6).checked = checkTag1.isSelected();
+        tagsAvailable.get(6).checked = checkTag7.isSelected();
     }//GEN-LAST:event_checkTag7ActionPerformed
 
     private void checkTag8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag8ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(7).checked = checkTag1.isSelected();
+        tagsAvailable.get(7).checked = checkTag8.isSelected();
     }//GEN-LAST:event_checkTag8ActionPerformed
 
     private void checkTag9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag9ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(8).checked = checkTag1.isSelected();
+        tagsAvailable.get(8).checked = checkTag9.isSelected();
     }//GEN-LAST:event_checkTag9ActionPerformed
 
     private void checkTag10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkTag10ActionPerformed
         // TODO add your handling code here:
-        tagsAvailable.get(9).checked = checkTag1.isSelected();
+        tagsAvailable.get(9).checked = checkTag10.isSelected();
     }//GEN-LAST:event_checkTag10ActionPerformed
 
     /**
