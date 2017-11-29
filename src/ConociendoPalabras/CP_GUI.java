@@ -2236,7 +2236,7 @@ public class CP_GUI extends javax.swing.JFrame {
         text = "";       //TEXTO INGRESADO POR EL USUARIO
         picture = "";    //NOMBRE IMAGEN A MOSTRAR
         roundCount = 1;
-        roundTotal = 5; 
+        //roundTotal = 5; 
         teams = 2;
         team1Score = 0;
         team2Score = 0;
@@ -2847,15 +2847,17 @@ public class CP_GUI extends javax.swing.JFrame {
             wordList.addAll(AppManager.instance.getPalabras());
         }
         
+        if (roundTotal > wordList.size()) {
+            roundTotal = wordList.size();
+        }
+        
         Collections.shuffle(wordList);
         
         word = wordList.get(0).getNombre();
         picture = wordList.get(0).getURLImagen();
         labPicture.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/words/" + picture)));
         
-        if (roundTotal > wordList.size()) {
-            roundTotal = wordList.size();
-        }
+        
         
         TAGS.setVisible(false);
         PLAY.setVisible(true);
