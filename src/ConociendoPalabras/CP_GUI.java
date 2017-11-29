@@ -2849,6 +2849,7 @@ public class CP_GUI extends javax.swing.JFrame {
         
         if (roundTotal > wordList.size()) {
             roundTotal = wordList.size();
+            labRoundCounter.setText(roundCount + "/" + roundTotal);
         }
         
         Collections.shuffle(wordList);
