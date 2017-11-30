@@ -1,5 +1,6 @@
 
-# exclude everything except directory src
+# exclude everything except directory src and database file
 
 /*
 !/src
+!conociendoPalabras.db
