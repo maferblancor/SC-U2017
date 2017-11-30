@@ -9,6 +9,7 @@ package ConociendoPalabras;
 
 import java.sql.*;
 import java.io.File;
+import javax.swing.JOptionPane;
 
 
 
@@ -22,12 +23,12 @@ public class BDmanager {
     public static Connection ConnectDB(){
         try{
             Class.forName("org.sqlite.JDBC");
-            String path = new File("src/resources/db/conociendoPalabras.db").getAbsolutePath();
+            String path = new File("conociendoPalabras.db").getAbsolutePath();
             Connection conn = DriverManager.getConnection("jdbc:sqlite:" + path);
            // JOptionPane.showMessageDialog(null, "Database connected");
             return conn;
         }catch(Exception e){
-            //JOptionPane.showMessageDialog(null, "Database not connected");
+            JOptionPane.showMessageDialog(null, "Database not connected");
             return null;
         }
     }
